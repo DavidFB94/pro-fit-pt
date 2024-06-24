@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/pro-fit-pt-background.png') no-repeat center center fixed;
+    background: url('/media/pro-fit-pt-home-background.webp') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -27,8 +27,8 @@ body {
     width: fit-content;
 }
 
-.shop-now-button {
-    background: black;
+.hire-now-button {
+    background: #222;
     color: white;
     min-width: 260px;
 }
@@ -38,13 +38,13 @@ body {
     color: white;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
+.hire-now-button:hover,
+.hire-now-button:active,
+.hire-now-button:focus,
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
+    background: #111;
     color: white;
 }
 
