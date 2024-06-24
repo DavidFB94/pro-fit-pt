@@ -44,16 +44,19 @@
 <body>
 	<header class="container-fluid fixed-top">
 		<div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-			<div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+			<div class="col-4 col-lg-2 my-auto py-1 py-lg-0 text-center text-lg-right">
 				<a href="{% url 'home' %}" class="nav-link main-logo-link">
-					<h2 class="logo-font text-black my-0"><strong>ProFit-PT</strong></h2>
+					<h2 class="text-black my-0"><strong>ProFit-PT</strong></h2>
 				</a>
 			</div>
-			<div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+			<div class="col-lg-5">
+				{% include 'includes/main-nav.html' %}
+			</div>
+			<div class="col-12 col-lg-2 my-auto py-1 py-lg-0">
 				<form method="GET" action="">
 					<div class="input-group w-100">
 						<input class="form-control border border-black rounded-0" type="text" name="q"
-							placeholder="Search our site">
+							placeholder="Search">
 						<div class="input-group-append">
 							<button class="form-control btn btn-black border border-black rounded-0" type="submit">
 								<span class="icon">
@@ -64,7 +67,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+			<div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
 				<ul class="list-inline list-unstyled text-center text-lg-right my-0">
 					<li class="list-inline-item dropdown">
 						<a class="text-black nav-link dropdown" href="#" role="button" id="user-options"
@@ -77,9 +80,9 @@
 						<div class="dropdown-menu border-0" aria-labelledby="user-options">
 							{% if request.user.is_authenticated %}
 							{% if request.user.is_superuser %}
-							<a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+							<a href="" class="dropdown-item">Product Management</a>
 							{% endif %}
-							<a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+							<a href="{}" class="dropdown-item">My Profile</a>
 							<a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
 							{% else %}
 							<a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -104,6 +107,17 @@
 					</li>
 				</ul>
 			</div>
+		</div>
+		<div class="row bg-white d-lg-none">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				{% include 'includes/mobile-top-header.html' %}
+				{% include 'includes/main-nav.html' %}
+			</nav>
 		</div>
 	</header>
 
