@@ -8,7 +8,7 @@ def all_services(request):
     services = Service.objects.all()
 
     context = {
-        'services': services,
+        'all_services': services,
     }
 
-    return render(request, 'services/services.html')
+    return render(request, 'services/services.html', context)
