@@ -2,26 +2,36 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                {{ services }}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            {% for service in all_services %}
+            <div class="d-flex my-3 bg-secondary position-relative">
+                <div class="d-flex">
+                    {% if "placeholder" in service.image.url %}
+                    <img class="card-image" src="{% static 'media/no-image.png' %}" alt="placeholder image">
+                    {% else %}
+                    <img src="{{ service.image.url }}" alt="{{ service.name }}">
+                    {% endif %}
+                </div>
+                <div class="">
+                    <a href="" class="btn"><h2>{{service.name}}</h2></a>
+                    <p>{{service.description}}</p>
+                    <p>Category: {{service.category}}</p>
+                </div>
+                <div class="position-absolute bottom-0 end-0">
+                    <a href="" class="btn btn-primary my-3 me-3">Read more</a>
+                </div>
             </div>
-            <div>
-                {% if "placeholder" in services.image.url %}
-                <img class="" src="{% 'media/no-image.png' %}" alt="placeholder image">
-                {% else %}
-                <img src="{{ service.image.url }}" alt="{{ service.name }}">
-                {% endif %}
-            </div>
+            {% endfor %}
         </div>
     </div>
-{% endblock %}
+    {% endblock %}
