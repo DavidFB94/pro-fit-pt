@@ -1,14 +1,16 @@
 from django.shortcuts import render
-from .models import Service
-
+from .models import Service, PricingTier
 
 def all_services(request):
-    """ A view to show all products, including sorting and search queries """
-
     services = Service.objects.all()
+    services_with_pricing = []
+
+    for service in services:
+        pricing_tier = PricingTier.objects.filter(service=service).first()
+        services_with_pricing.append((service, pricing_tier))
 
     context = {
-        'all_services': services,
+        'services_with_pricing': services_with_pricing,
     }
 
     return render(request, 'services/services.html', context)
