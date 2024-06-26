@@ -11,8 +11,11 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">
+    <div class="row text-center">
         <div class="col-12">
+            <h2 class="text-white mt-3 text-decoration-underline">Our services</h2>
+        </div>
+    </div>
     <div class="row justify-content-center">
         <div class="col col-lg-8">
             {% for service, pricing_tier in services_with_pricing %}
@@ -46,6 +49,6 @@
             </div>
             {% endfor %}
         </div>
-        </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
