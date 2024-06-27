@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'services/css/services.css' %}">
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -20,7 +24,7 @@
     <div class="row justify-content-center">
         <div class="col col-lg-8">
             {% for service, pricing_tier in services_list %}
-            <div class="d-flex flex-row my-3 bg-white position-relative card">
+            <div class=" card d-flex flex-row my-3 bg-white position-relative">
                 <div class="d-flex d-none d-sm-block">
                     {% if "placeholder" in service.image.url %}
                     <img class="card-image" src="{% static 'media/no-image.png' %}" alt="placeholder image">
@@ -29,7 +33,7 @@
                     {% endif %}
                 </div>
                 <div class="ms-3">
-                    <a href="" class="btn">
+                    <a href="{% url 'service_details' service.id %}" class="btn">
                         <h2>{{ service.name }}</h2>
                     </a>
                     <p><small><i class="fa-solid fa-tags"></i>
@@ -45,7 +49,7 @@
                         <p class="text-center my-0">Price: N/A</p>
                         {% endif %}
                     </div>
-                    <a href="" class="btn btn-primary my-3 me-3">Read more</a>
+                    <a href="{% url 'service_details' service.id %}" class="btn btn-primary my-3 me-3">Read more</a>
                 </div>
             </div>
             {% endfor %}
@@ -68,10 +72,10 @@
                 <span>{{ num }}</span>
                 {% else %}
                 <a class="text-decoration-none" href="?page={{ num }}">{{ num }}</a>
-                    {% endif %}
+                {% endif %}
                 {% endfor %}
 
-                    {% if page_obj.has_next %}
+                {% if page_obj.has_next %}
                 <a class="px-1 text-decoration-none" href="?page={{ page_obj.next_page_number }}">next</a>
                 <a class="px-1 text-decoration-none" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
                 {% else %}
@@ -79,8 +83,7 @@
                 <span class="px-1">last &raquo;</span>
                 {% endif %}
             </div>
-                    {% endif %}
-        </div>
+            {% endif %}
         </div>
     </div>
 </div>
