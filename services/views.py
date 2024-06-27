@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.core.paginator import Paginator
+
 from .models import Service, PricingTier
 
 
@@ -21,3 +22,20 @@ def all_services(request):
     }
 
     return render(request, 'services/services.html', context)
+
+
+def service_details(request, service_id):
+    """ A view to show individual service details """
+
+    service = get_object_or_404(Service, pk=service_id)
+    pricing_tiers = PricingTier.objects.filter(service=service)
+
+
+    context = {
+        'service': service,
+        'pricing_tiers': pricing_tiers,
+    }
+
+    return render(request, 'services/service_detail.html', context)
+
+
