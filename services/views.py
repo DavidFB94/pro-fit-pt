@@ -4,7 +4,7 @@ from .models import Service, PricingTier
 
 
 def all_services(request):
-    services = Service.objects.all()
+    services = Service.objects.all().order_by('-pricingtier')
     services_list = []
     
     paginator = Paginator(services, 5)
