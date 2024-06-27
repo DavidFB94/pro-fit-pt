@@ -75,16 +75,6 @@ body {
     background: white !important
 }
 
-/* Services styles */
-.card {
-    height: 200px;
-}
-
-.card-image {
-    width: 200px;
-    height: 200px;
-}
-
 /* ------- Media Queries ------- */
 
 /* Slightly larger container on xl screens */
