@@ -36,6 +36,6 @@ def service_details(request, service_id):
         'pricing_tiers': pricing_tiers,
     }
 
-    return render(request, 'services/service_detail.html', context)
+    return render(request, 'services/service_details.html', context)
 
 
