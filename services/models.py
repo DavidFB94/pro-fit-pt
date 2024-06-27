@@ -32,4 +32,5 @@ class PricingTier(models.Model):
     price_per_unit = models.DecimalField(max_digits=8, decimal_places=2)
 
     def __str__(self):
-        return self.name
+        return f"PricingTier {self.id} added to {self.service}"
+
