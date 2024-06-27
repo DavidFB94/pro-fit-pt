@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'services/css/services.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row text-center">
+        <div class="col-12">
+            <h2 class="text-black mt-3 text-decoration-underline">Service details</h2>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-start">
+        <div class="col-lg-8">
+            <div class="card d-flex flex-row my-3 border">
+                <div class="d-none d-sm-block">
+                    {% if "placeholder" in service.image.url %}
+                    <img class="card-image" src="{% static 'media/no-image.png' %}" alt="placeholder image">
+                    {% else %}
+                    <img class="card-image" src="{{ service.image.url }}" alt="{{ service.name }}">
+                    {% endif %}
+                </div>
+                <div class="ms-3">
+                    <h2>{{ service.name }}</h2>
+                    <p><small><i class="fa-solid fa-tags"></i>{{ service.category }}</small></p>
+                    <p>{{ service.description }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card my-3 border">
+                <div class="card-body">
+                    <h5 class="card-title">Service Quantity</h5>
+                    <form class="form-session-quantity">
+                        {% if pricing_tiers %}
+                        <div class="mb-3">
+                            <label for="id_service_quantity" class="form-label"><strong>Quantity:</strong></label>
+                            <select class="form-select" name="service_quantity" id="id_service_quantity"
+                                onchange="calculateTotalPrice()">
+                                <option selected>Select amount</option>
+                                {% for pricing_tier in pricing_tiers %}
+                                <option value="{{ pricing_tier.quantity }}"
+                                    data-price="{{ pricing_tier.price_per_unit }}">
+                                    {{ pricing_tier.quantity }} - {{ pricing_tier.price_per_unit }} $/hour
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <p><strong>Total Price:</strong></p>
+                            <p id="total_price">0.00 $</p>
+                        </div>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript" src="{% static 'services/js/total_price.js' %}"></script>
+{% endblock %}
