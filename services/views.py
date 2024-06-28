@@ -5,20 +5,22 @@ from .models import Service, PricingTier
 
 
 def all_services(request):
-    services = Service.objects.all().order_by('-pricingtier')
-    services_list = []
-    
+    """ A view to show all services in a paginated list """
+    # Fetch distinct services, ordered by name
+    services = Service.objects.all().distinct().order_by('name')
+
     paginator = Paginator(services, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-
+    
+    services_list = []
     for service in page_obj:
-        pricing_tier = PricingTier.objects.filter(service=service).first()
+        pricing_tier = PricingTier.objects.filter(service=service).order_by('-price_per_unit').first()
         services_list.append((service, pricing_tier))
 
     context = {
         'services_list': services_list,
-        "page_obj": page_obj,
+        'page_obj': page_obj,
     }
 
     return render(request, 'services/services.html', context)
