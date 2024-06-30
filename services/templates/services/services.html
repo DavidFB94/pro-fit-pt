@@ -60,10 +60,10 @@
             {% if page_obj.has_other_pages %}
             <div class="pagination justify-content-center">
                 {% if page_obj.number > 1 %}
-                <a class="px-1 text-decoration-none" href="?page=1">&laquo; first</a>
+                <a class="px-1 text-decoration-none" href="?page=1">first</a>
                 <a class="px-1 text-decoration-none" href="?page={{ page_obj.previous_page_number }}">previous</a>
                 {% else %}
-                <span class="px-1">&laquo; first</span>
+                <span class="px-1">first</span>
                 <span class="px-1">previous</span>
                 {% endif %}
 
@@ -77,10 +77,10 @@
 
                 {% if page_obj.has_next %}
                 <a class="px-1 text-decoration-none" href="?page={{ page_obj.next_page_number }}">next</a>
-                <a class="px-1 text-decoration-none" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                <a class="px-1 text-decoration-none" href="?page={{ page_obj.paginator.num_pages }}">last</a>
                 {% else %}
                 <span class="px-1">next</span>
-                <span class="px-1">last &raquo;</span>
+                <span class="px-1">last</span>
                 {% endif %}
             </div>
             {% endif %}
