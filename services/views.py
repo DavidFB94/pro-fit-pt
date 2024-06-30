@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.core.paginator import Paginator
 
-from .models import Service, PricingTier
+from .models import Service, PricingTier, Category
 
 
 def all_services(request):
@@ -11,10 +11,17 @@ def all_services(request):
     # Fetch distinct services, ordered by name
     services = Service.objects.all().distinct().order_by('name')
     query = None
+    categories = None
 
 
     # From CI Boutique Ado walkthrough
     if request.GET:
+        if 'category' in request.GET:
+            category_names = request.GET['category'].split(',')
+            categories = Category.objects.filter(name__in=category_names)
+            services = services.filter(category__name__in=category_names)
+
+        
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -39,6 +46,7 @@ def all_services(request):
         'services_list': services_list,
         'page_obj': page_obj,
         'search_term': query,
+        'current_categories': categories,
     }
 
     return render(request, 'services/services.html', context)

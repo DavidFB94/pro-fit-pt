@@ -9,9 +9,13 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{% url 'services' %}">All services</a></li>
-                        <li><a class="dropdown-item" href="#">Personal Training</a></li>
-                        <li><a class="dropdown-item" href="#">Fitness counseling</a></li>
-                        <li><a class="dropdown-item" href="#">Personalized workout plans</a></li>
+                        <li><a class="dropdown-item" href="{% url 'services' %}?category=Personal Training">Personal
+                                Training</a></li>
+                        <li><a class="dropdown-item" href="{% url 'services' %}?category=Counseling">Fitness
+                                counseling</a></li>
+                        <li><a class="dropdown-item"
+                                href="{% url 'services' %}?category=Workout Plan">Personalized workout
+                                plans</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
