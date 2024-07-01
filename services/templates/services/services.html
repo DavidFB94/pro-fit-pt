@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'services/css/services.css' %}">
+<link rel="stylesheet" href="{% static 'services/css/services.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -19,12 +19,31 @@
     <div class="row text-center">
         <div class="col-12">
             <h2 class="text-black mt-3 text-decoration-underline">Our services</h2>
+            {% for c in current_categories %}
+            <a class="category-badge text-decoration-none" href="{% url 'services' %}?category={{ c.name }}">
+                <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.name }}</span>
+            </a>
+            {% endfor %}
         </div>
     </div>
     <div class="row justify-content-center">
+        <div class="col-12 d-flex justify-content-end">
+            <div class="sort-select-wrapper">
+                <select id="sort-selector"
+                    class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                    <option value="pricingtier_asc" {% if current_sorting == 'pricingtier_asc' %}selected{% endif %}>Price (low to high)</option>
+                    <option value="pricingtier_desc" {% if current_sorting == 'pricingtier_desc' %}selected{% endif %}>Price (high to low)</option>
+                    <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                    <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                    <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                    <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                </select>
+            </div>
+        </div>
         <div class="col col-lg-8">
             {% for service, pricing_tier in services_list %}
-            <div class=" card d-flex flex-row my-3 bg-white position-relative">
+            <div class="card d-flex flex-row my-3 bg-white position-relative">
                 <div class="d-flex d-none d-sm-block">
                     {% if "placeholder" in service.image.url %}
                     <img class="card-image" src="{% static 'media/no-image.png' %}" alt="placeholder image">
@@ -36,9 +55,7 @@
                     <a href="{% url 'service_details' service.id %}" class="btn">
                         <h2>{{ service.name }}</h2>
                     </a>
-                    <p><small><i class="fa-solid fa-tags"></i>
-                            {{ service.category }}</small>
-                    </p>
+                    <p><small><i class="fa-solid fa-tags"></i><a class="text-decoration-none" href="{% url 'services' %}?category={{ service.category.name }}">{{ service.category.name }}</a></small></p>
                     <p>{{ service.description }}</p>
                 </div>
                 <div class="position-absolute bottom-0 end-0">
@@ -66,7 +83,6 @@
                 <span class="px-1">first</span>
                 <span class="px-1">previous</span>
                 {% endif %}
-
                 {% for num in page_obj.paginator.page_range %}
                 {% if num == page_obj.number %}
                 <span>{{ num }}</span>
@@ -74,7 +90,6 @@
                 <a class="text-decoration-none" href="?page={{ num }}">{{ num }}</a>
                 {% endif %}
                 {% endfor %}
-
                 {% if page_obj.has_next %}
                 <a class="px-1 text-decoration-none" href="?page={{ page_obj.next_page_number }}">next</a>
                 <a class="px-1 text-decoration-none" href="?page={{ page_obj.paginator.num_pages }}">last</a>
@@ -87,4 +102,25 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    document.getElementById('sort-selector').addEventListener('change', function() {
+        const selectedValue = this.value;
+        let currentUrl = new URL(window.location);
+
+        if (selectedValue === 'reset') {
+            currentUrl.searchParams.delete('sort');
+            currentUrl.searchParams.delete('direction');
+        } else {
+            const [sort, direction] = selectedValue.split('_');
+            currentUrl.searchParams.set('sort', sort);
+            currentUrl.searchParams.set('direction', direction);
+        }
+
+        window.location = currentUrl.toString();
+    });
+</script>
 {% endblock %}
