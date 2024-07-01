@@ -33,7 +33,12 @@
                 </div>
                 <div class="ms-3">
                     <h2>{{ service.name }}</h2>
-                    <p><small><i class="fa-solid fa-tags"></i>{{ service.category }}</small></p>
+                    <p><small><i class="fa-solid fa-tags"></i><a class="text-decoration-none"
+                                href="{% url 'services' %}?category={{ service.category.name }}">
+                                {{ service.category.name }}
+                            </a>
+                        </small>
+                    </p>
                     <p>{{ service.description }}</p>
                 </div>
             </div>
@@ -41,7 +46,7 @@
         <div class="col-lg-4">
             <div class="card my-3 border">
                 <div class="card-body">
-                    <h5 class="card-title">Service Quantity</h5>
+                    <h5 class="card-title">Buy sessions</h5>
                     <form class="form-session-quantity">
                         {% if pricing_tiers %}
                         <div class="mb-3">
@@ -62,6 +67,7 @@
                             <p id="total_price">0.00 $</p>
                         </div>
                         {% endif %}
+                        <button>Add to cart</button>
                     </form>
                 </div>
             </div>
@@ -72,5 +78,6 @@
 {% endblock %}
 
 {% block postloadjs %}
+{{ block.super}}
 <script type="text/javascript" src="{% static 'services/js/total_price.js' %}"></script>
 {% endblock %}
