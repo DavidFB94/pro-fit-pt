@@ -47,7 +47,8 @@
             <div class="card my-3 border">
                 <div class="card-body">
                     <h5 class="card-title">Buy sessions</h5>
-                    <form class="form-session-quantity">
+                    <form class="form-session-quantity" action="{% url 'add_to_cart' service.id %}" method="POST">
+                        {% csrf_token %}
                         {% if pricing_tiers %}
                         <div class="mb-3">
                             <label for="id_service_quantity" class="form-label"><strong>Quantity:</strong></label>
@@ -62,12 +63,15 @@
                                 {% endfor %}
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <p><strong>Total Price:</strong></p>
-                            <p id="total_price">0.00 $</p>
+                        <div class="d-flex flex-row">
+                            <div class="mb-3 me-auto">
+                                <p><strong>Total Price:</strong></p>
+                                <p id="total_price">0.00 $</p>
+                            </div>
+                            <input class="btn my-2 ms-auto" type="submit" value="Add to cart">
                         </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         {% endif %}
-                        <button>Add to cart</button>
                     </form>
                 </div>
             </div>
