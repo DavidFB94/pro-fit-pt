@@ -29,6 +29,16 @@ body {
 	z-index: -1;
 }
 
+/* Images styles */
+.card {
+    height: 200px;
+}
+
+.card-image {
+    width: 200px;
+    height: 200px;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
