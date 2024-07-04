@@ -34,7 +34,13 @@
                     {% for item in cart_items %}
                     <tr>
                         <td class="p-3 w-25">
-                            <img class="card card-image rounded" src="{{ item.service.image.url }}">
+                            {% if "placeholder" in item.service.image.url %}
+                            <img class="card card-image rounded" src="{% static 'media/no-image.png' %}"
+                                alt="placeholder image">
+                            {% else %}
+                            <img class="card card-image rounded" src="{{ item.service.image.url }}"
+                                alt="{{ service.name }}">
+                            {% endif %}
                         </td>
                         <td class="py-3">
                             <p class="my-0">{{ item.service.name }}</p>
