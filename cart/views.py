@@ -1,5 +1,7 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+
+from services.models import Service
 
 # Create your views here.
 
@@ -15,6 +17,7 @@ def add_to_cart(request, item_id):
     Add a quantity of the specified service to the shopping cart
     """
 
+    service = Service.objects.get(pk=item_id)
     quantity = int(request.POST.get('service_quantity'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
@@ -23,6 +26,7 @@ def add_to_cart(request, item_id):
         cart[item_id] += quantity
     else:
         cart[item_id] = quantity
+        messages.success(request, f'Added {service.name} to your cart')
     
     request.session['cart'] = cart
     return redirect(redirect_url)
