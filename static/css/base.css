@@ -109,6 +109,12 @@ body {
     height: 5px;
 }
 
+.cart-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 /* ------- Media Queries ------- */
 
 /* fixed top navbar only on medium and up */
