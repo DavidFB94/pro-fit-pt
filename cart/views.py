@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
 
-from services.models import Service
+from services.models import Service, PricingTier
 
 # Create your views here.
 
@@ -18,32 +18,45 @@ def add_to_cart(request, item_id):
     """
 
     service = get_object_or_404(Service, pk=item_id)
-    quantity = int(request.POST.get('service_quantity'))
+    pricing_tier_id = int(request.POST.get('service_quantity'))
+    pricing_tier = get_object_or_404(PricingTier, id=pricing_tier_id)
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
 
-    if item_id in list(cart.keys()):
-        cart[item_id] += quantity
-        messages.success(request, f'Updated {service.name} quantity to {cart[item_id]}')
+    # Composite key using item_id and pricing_tier_id
+    composite_key = f"{item_id}_{pricing_tier.id}"
+
+    if composite_key in cart:
+        cart[composite_key]['quantity'] += pricing_tier.quantity
+        messages.success(request, f'Added {pricing_tier.quantity}x more {service.name} for ${pricing_tier.price_per_unit}/each to your cart')
     else:
-        cart[item_id] = quantity
-        messages.success(request, f'Added {service.name} {quantity} to your cart')
+        cart[composite_key] = {
+            'quantity': pricing_tier.quantity,
+            'service_id': item_id,
+            'service_name': service.name,
+            'pricing_tier_id': pricing_tier.id,
+            'pricing_tier_quantity': pricing_tier.quantity,
+            'price_per_unit': float(pricing_tier.price_per_unit)
+        }
+        messages.success(request, f'Added {pricing_tier.quantity}x {service.name} for ${pricing_tier.price_per_unit}/each to your cart')
     
     request.session['cart'] = cart
     return redirect(redirect_url)
 
 
-def remove_from_cart(request, item_id):
+def remove_from_cart(request, composite_key):
     """
     Remove the item from the shopping cart
     """
     try:
-        service = get_object_or_404(Service, pk=item_id)
         cart = request.session.get('cart', {})
 
-        if item_id in cart:
-            cart.pop(item_id)
-        messages.success(request, f'Removed {service.name} from your cart')
+        if composite_key in cart:
+            service_name = cart[composite_key]['service_name']
+            cart.pop(composite_key)
+            messages.success(request, f'Removed {service_name} from your cart')
+        else:
+            messages.error(request, 'Item not found in cart')
         
         request.session['cart'] = cart
         return HttpResponse(status=200)

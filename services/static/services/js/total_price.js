@@ -6,7 +6,7 @@ function calculateTotalPrice() {
     }
     
     var selectedOption = select.options[select.selectedIndex];
-    var quantity = parseInt(selectedOption.value);
+    var quantity = parseInt(selectedOption.getAttribute("data-quantity"));
     var pricePerUnit = parseFloat(selectedOption.getAttribute("data-price"));
     var totalPrice = quantity * pricePerUnit;
     document.getElementById("total_price").innerText = totalPrice.toFixed(2) + " $";

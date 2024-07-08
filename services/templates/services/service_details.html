@@ -48,14 +48,12 @@
                         {% if pricing_tiers %}
                         <div class="mb-3">
                             <label for="id_service_quantity" class="form-label"><strong>Quantity:</strong></label>
-                            <select class="form-select" name="service_quantity" id="id_service_quantity"
-                                onchange="calculateTotalPrice()">
-                                <option selected>Select amount</option>
-                                {% for pricing_tier in pricing_tiers %}
-                                <option value="{{ pricing_tier.quantity }}"
-                                    data-price="{{ pricing_tier.price_per_unit }}">
-                                    {{ pricing_tier.quantity }} - {{ pricing_tier.price_per_unit }} $/hour
-                                </option>
+                            <select class="form-select" name="service_quantity" id="id_service_quantity" onchange="calculateTotalPrice()">
+                                <option selected disabled>Select amount</option>
+                                {% for pricing_tier in pricing_tiers|dictsort:"quantity" %}
+                                    <option value="{{ pricing_tier.id }}" data-quantity="{{ pricing_tier.quantity }}" data-price="{{ pricing_tier.price_per_unit }}">
+                                        {{ pricing_tier.quantity }} - {{ pricing_tier.price_per_unit }} $/hour
+                                    </option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -79,5 +77,5 @@
 
 {% block postloadjs %}
 {{ block.super}}
-<script type="text/javascript" src="{% static 'services/js/total_price.js' %}"></script>
+<script src="{% static 'services/js/total_price.js' %}"></script>
 {% endblock %}

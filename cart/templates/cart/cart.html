@@ -1,5 +1,6 @@
 {% extends "base.html"%}
 {% load static %}
+{% load cart_tools %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -27,7 +28,7 @@
                             <th scope="col">Service info</th>
                             <th scope="col"></th>
                             <th scope="col">Price</th>
-                            <th scope="col">Qty</th>
+                            <th scope="col">Pkg amnt</th>
                             <th scope="col">Subtotal</th>
                         </tr>
                     </thead>
@@ -46,19 +47,20 @@
                             <p class="my-0">{{ item.service.name }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">{{ item.price }}</p>
+                            <p class="my-0">${{ item.price_per_unit }}</p>
                         </td>
                         <td class="py-3">
                             <p class="my-0">{{ item.quantity }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">{{ item.service.name }}</p>
+                            <p class="my-0">${{ item.price_per_unit|calc_subtotal:item.quantity }}</p>
                         </td>
                         <td>
                             <form action="" method="POST" class="update-form">
                                 {% csrf_token %}
-                                <a class="remove-item text-danger hover"
-                                    id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                                <a class="remove-item text-danger hover" id="remove_{{ item.composite_key }}">
+                                    <small>Remove</small>
+                                </a>
                             </form>
                         </td>
                     </tr>
@@ -97,14 +99,14 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
 
     // Remove item and reload on click
     $('.remove-item').click(function (e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/cart/remove/${itemId}/`;
-        var data = { 'csrfmiddlewaretoken': csrfToken };
+        let csrfToken = "{{ csrf_token }}";
+        let compositeKey = $(this).attr('id').split('remove_')[1];
+        let url = `/cart/remove/${compositeKey}/`;
+        let data = { 'csrfmiddlewaretoken': csrfToken };
 
         $.post(url, data)
             .done(function () {
