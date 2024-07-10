@@ -27,8 +27,8 @@
                         <tr>
                             <th scope="col">Service info</th>
                             <th scope="col"></th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Pkg amnt</th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">Package</th>
                             <th scope="col">Subtotal</th>
                         </tr>
                     </thead>
@@ -50,7 +50,7 @@
                             <p class="my-0">${{ item.price_per_unit }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">{{ item.quantity }}</p>
+                            <p class="my-0">{{ item.quantity }}x</p>
                         </td>
                         <td class="py-3">
                             <p class="my-0">${{ item.price_per_unit|calc_subtotal:item.quantity }}</p>
