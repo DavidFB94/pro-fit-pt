@@ -48,12 +48,14 @@
                         {% if pricing_tiers %}
                         <div class="mb-3">
                             <label for="id_service_quantity" class="form-label"><strong>Quantity:</strong></label>
-                            <select class="form-select" name="service_quantity" id="id_service_quantity" onchange="calculateTotalPrice()">
+                            <select class="form-select" name="service_quantity" id="id_service_quantity"
+                                onchange="calculateTotalPrice()">
                                 <option selected disabled>Select amount</option>
                                 {% for pricing_tier in pricing_tiers|dictsort:"quantity" %}
-                                    <option value="{{ pricing_tier.id }}" data-quantity="{{ pricing_tier.quantity }}" data-price="{{ pricing_tier.price_per_unit }}">
-                                        {{ pricing_tier.quantity }} - {{ pricing_tier.price_per_unit }} $/hour
-                                    </option>
+                                <option value="{{ pricing_tier.id }}" data-quantity="{{ pricing_tier.quantity }}"
+                                    data-price="{{ pricing_tier.price_per_unit }}">
+                                    {{ pricing_tier.quantity }} - {{ pricing_tier.price_per_unit }} $/hour
+                                </option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -77,5 +79,21 @@
 
 {% block postloadjs %}
 {{ block.super}}
-<script src="{% static 'services/js/total_price.js' %}"></script>
+<script>
+
+    // Calculate and update total price for services
+    function calculateTotalPrice() {
+        var select = document.getElementById("id_service_quantity");
+        if (!select.value || select.value === "Select amount") {
+            document.getElementById("total_price").innerText = "0.00 $";
+            return;
+        }
+
+        var selectedOption = select.options[select.selectedIndex];
+        var quantity = parseInt(selectedOption.getAttribute("data-quantity"));
+        var pricePerUnit = parseFloat(selectedOption.getAttribute("data-price"));
+        var totalPrice = quantity * pricePerUnit;
+        document.getElementById("total_price").innerText = totalPrice.toFixed(2) + " $";
+    }
+</script>
 {% endblock %}
