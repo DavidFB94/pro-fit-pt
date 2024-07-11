@@ -68,8 +68,11 @@ class OrderLineItem(models.Model):
         Override the original save method to set the order number
         if it hasn't been set already.
         """
-        self.lineitem_total = self.item.price_per_unit * self.item.quantity
+        if self.pricingtier:
+            self.lineitem_total = self.pricingtier.price_per_unit * self.pricingtier.quantity
+        else:
+            self.lineitem_total = self.service.pricingtier.price_per_unit * self.service.pricingtier.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.order__order_number
+        return f'OrderLineItem {self.id}'
