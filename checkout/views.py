@@ -16,7 +16,6 @@ def checkout(request):
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
-        print("Cart contents:", cart)
 
         form_data = {
             'full_name': request.POST['full_name'],
