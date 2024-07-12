@@ -63,7 +63,7 @@ def all_services(request):
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('services'))
             
-            queries = Q(name__icontains=query) | Q(description__icontains(query))
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
             services = services.filter(queries)
 
     # apply distinct after filtering/sorting to get unique services only
@@ -106,7 +106,23 @@ def service_details(request, service_id):
 
 def add_service(request):
     """ Add a service to the store """
-    form = ServiceForm()
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = ServiceForm(request.POST, request.FILES)
+        if form.is_valid():
+            service = form.save()
+            messages.success(request, 'Successfully added service!')
+            return redirect(reverse('service_details', args=[service.id]))
+        else:
+            messages.error(request,
+                           ('Failed to add service. '
+                            'Please ensure the form is valid.'))
+    else:
+        form = ServiceForm()
+
     template = 'services/add_service.html'
     context = {
         'form': form,
