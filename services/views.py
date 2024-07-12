@@ -5,6 +5,7 @@ from django.core.paginator import Paginator
 from django.db.models.functions import Lower
 
 from .models import Service, PricingTier, Category
+from .forms import ServiceForm
 
 
 def all_services(request):
@@ -103,3 +104,12 @@ def service_details(request, service_id):
     return render(request, 'services/service_details.html', context)
 
 
+def add_service(request):
+    """ Add a service to the store """
+    form = ServiceForm()
+    template = 'services/add_service.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
