@@ -18,3 +18,18 @@ class ServiceForm(forms.ModelForm):
         for field in self.fields.values():
             field.widget.attrs['class'] = 'border-black rounded-0'
 
+
+class PricingTierForm(forms.ModelForm):
+    class Meta:
+        model = PricingTier
+        fields = ['quantity', 'price_per_unit']
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['quantity'].validators.append(MinValueValidator(1))
+        self.fields['price_per_unit'].validators.append(MinValueValidator(0.01))
+        
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'border-black rounded-0'
+
+PricingTierFormSet = inlineformset_factory(Service, PricingTier, form=PricingTierForm, extra=1, can_delete=True)
