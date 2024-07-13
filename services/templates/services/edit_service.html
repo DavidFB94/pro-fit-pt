@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row text-center">
+        <div class="col-12 col-md-6">
+            <h2 class="text-black mt-3 text-decoration-underline">Service Management</h2>
+            <h5 class="text-muted">Edit a service</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <form method="POST" action="{% url 'edit_service' service.id %}" class="form mb-2"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div id="formset-container">
+                    {{ formset.management_form }}
+                    {% for form in formset %}
+                    <div class="formset-item" id="form-{{ forloop.counter0 }}">
+                        {{ form.id }}
+                        <div class="form-group">
+                            <label for="{{ form.quantity.id_for_label }}">Quantity</label>
+                            {{ form.quantity }}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.price_per_unit.id_for_label }}">Price per Unit</label>
+                            {{ form.price_per_unit }}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.DELETE.id_for_label }}">Delete</label>
+                            {{ form.DELETE }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button type="button" class="btn btn-outline-black rounded-0" id="add-formset">Add Pricing Tier</button>
+                <div class="text-right">
+                    <a class="btn btn-outline-black rounded-0" href="{% url 'services' %}">Cancel</a>
+                    <button class="btn btn-black rounded-0" type="submit">Update Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var formsetContainer = document.getElementById('formset-container');
+        var addFormsetButton = document.getElementById('add-formset');
+        var totalForms = document.getElementById('id_pricingtier_set-TOTAL_FORMS');
+
+        addFormsetButton.addEventListener('click', function () {
+            var newFormIndex = totalForms.value;
+            var formTemplate = document.querySelector('.formset-item').outerHTML;
+
+            // Replace __prefix__ with the new form index
+            var newFormHtml = formTemplate.replace(/__prefix__/g, newFormIndex);
+
+            // Create a new div for the form and set its inner HTML
+            var newForm = document.createElement('div');
+            newForm.innerHTML = newFormHtml;
+
+            // Update the formset item IDs and names
+            newForm.innerHTML = newForm.innerHTML.replace(/id="(\S+)-(\d+)-(\S+)"/g, 'id="$1-' + newFormIndex + '-$3"');
+            newForm.innerHTML = newForm.innerHTML.replace(/name="(\S+)-(\d+)-(\S+)"/g, 'name="$1-' + newFormIndex + '-$3"');
+            newForm.innerHTML = newForm.innerHTML.replace(/for="(\S+)-(\d+)-(\S+)"/g, 'for="$1-' + newFormIndex + '-$3"');
+
+            // Append the new form to the formset container
+            formsetContainer.appendChild(newForm.firstElementChild);
+
+            // Increment the total forms count
+            totalForms.value = parseInt(totalForms.value) + 1;
+        });
+    });
+</script>
+{% endblock %}
