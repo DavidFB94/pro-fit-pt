@@ -48,9 +48,9 @@
             <div class="card d-flex flex-row my-3 bg-white position-relative">
                 <div class="d-flex d-none d-sm-block">
                     {% if "placeholder" in service.image.url %}
-                    <img class="card card-image rounded" src="{% static 'media/no-image.png' %}" alt="placeholder image">
+                    <img class="card card-image" src="{% static 'media/no-image.png' %}" alt="placeholder image">
                     {% else %}
-                    <img class="card card-image rounded" src="{{ service.image.url }}" alt="{{ service.name }}">
+                    <img class="card card-image" src="{{ service.image.url }}" alt="{{ service.name }}">
                     {% endif %}
                 </div>
                 <div class="ms-3">
@@ -61,6 +61,12 @@
                     <p>{{ service.description }}</p>
                 </div>
                 <div class="position-absolute bottom-0 end-0">
+                    {% if request.user.is_superuser %}
+                    <small class="ml-3">
+                        <a href="">Edit</a>
+                        <a class="text-danger" href="{% url 'delete_service' service.id %}">Delete</a>
+                    </small>
+                    {% endif %}
                     <div>
                         {% with service.pricingtier_set.all|dictsortreversed:"price_per_unit"|first as highest_pricing_tier %}
                             {% if highest_pricing_tier %}
