@@ -5,7 +5,7 @@ from django.core.paginator import Paginator
 from django.db.models.functions import Lower
 
 from .models import Service, PricingTier, Category
-from .forms import ServiceForm
+from .forms import ServiceForm, PricingTierForm, PricingTierFormSet
 
 
 def all_services(request):
@@ -112,20 +112,25 @@ def add_service(request):
 
     if request.method == 'POST':
         form = ServiceForm(request.POST, request.FILES)
-        if form.is_valid():
+        formset = PricingTierFormSet(request.POST)
+
+        if form.is_valid() and formset.is_valid():
             service = form.save()
+            formset.instance = service
+            formset.save()
             messages.success(request, 'Successfully added service!')
             return redirect(reverse('service_details', args=[service.id]))
         else:
-            messages.error(request,
-                           ('Failed to add service. '
-                            'Please ensure the form is valid.'))
+            messages.error(request, 'Failed to add service. Please ensure the form is valid.')
     else:
         form = ServiceForm()
+        formset = PricingTierFormSet()
 
     template = 'services/add_service.html'
     context = {
         'form': form,
+        'formset': formset,
     }
 
     return render(request, template, context)
+
