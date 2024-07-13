@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q, Subquery, OuterRef
 from django.core.paginator import Paginator
 from django.db.models.functions import Lower
@@ -107,6 +108,7 @@ def service_details(request, service_id):
     return render(request, 'services/service_details.html', context)
 
 
+@login_required
 def add_service(request):
     """ Add a service to the store """
     if not request.user.is_superuser:
@@ -137,6 +139,8 @@ def add_service(request):
 
     return render(request, template, context)
 
+
+@login_required
 def edit_service(request, service_id):
     """ Edit a service in the store """
     if not request.user.is_superuser:
@@ -168,6 +172,8 @@ def edit_service(request, service_id):
 
     return render(request, template, context)
 
+
+@login_required
 def delete_service(request, service_id):
     """ Delete a service from the store """
     if not request.user.is_superuser:
