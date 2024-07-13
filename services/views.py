@@ -69,6 +69,8 @@ def all_services(request):
     # apply distinct after filtering/sorting to get unique services only
     services = services.distinct()
 
+    total_services_count = services.count()  # Get the total count
+
     current_sorting = f'{sort}_{direction}'
 
     paginator = Paginator(services, 5)
@@ -85,6 +87,7 @@ def all_services(request):
         'categories': category_names if categories else None,
         'sort': sort,
         'direction': direction,
+        'total_services_count': total_services_count,
     }
 
     return render(request, 'services/services.html', context)
