@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'contact',
+    'about',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -96,7 +97,8 @@ TEMPLATES = [
                 'django.template.context_processors.request', # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'cart.contexts.cart_contents'
+                'django.template.context_processors.media', # do I need this? 
+                'cart.contexts.cart_contents',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
@@ -134,7 +136,7 @@ WSGI_APPLICATION = 'pro_fit_pt.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-if "DATABASE_URL" in os.environ:
+if "DATABASE_URL" not in os.environ:
     print("connected to PostgreSQL")
     DATABASES = {
         "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
@@ -187,6 +189,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# Do I need this??
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
