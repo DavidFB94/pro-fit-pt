@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background: url('/static/media/pro-fit-pt-background-image.webp') no-repeat center center fixed;
+    background: url('../images/pro-fit-pt-background-image.webp') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 100px);
     color: #555;
