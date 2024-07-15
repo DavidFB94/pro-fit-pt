@@ -57,7 +57,7 @@
                     <a href="{% url 'service_details' service.id %}" class="btn">
                         <h2>{{ service.name }}</h2>
                     </a>
-                    <p><small><i class="fa-solid fa-tags"></i><a class="text-decoration-none" href="{% url 'services' %}?category={{ service.category.name }}">{{ service.category.name }}</a></small></p>
+                    <p><small><i class="fa-solid fa-tags"></i> <a class="text-decoration-none" href="{% url 'services' %}?category={{ service.category.name }}">{{ service.category.name }}</a></small></p>
                     <p>{{ service.description }}</p>
                 </div>
                 <div class="position-absolute bottom-0 end-0">
@@ -118,21 +118,5 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script>
-    document.getElementById('sort-selector').addEventListener('change', function() {
-        const selectedValue = this.value;
-        let currentUrl = new URL(window.location);
-
-        if (selectedValue === 'reset') {
-            currentUrl.searchParams.delete('sort');
-            currentUrl.searchParams.delete('direction');
-        } else {
-            const [sort, direction] = selectedValue.split('_');
-            currentUrl.searchParams.set('sort', sort);
-            currentUrl.searchParams.set('direction', direction);
-        }
-
-        window.location = currentUrl.toString();
-    });
-</script>
+<script src="{% static 'services/js/sort_services.js' %}"></script>
 {% endblock %}
