@@ -71,17 +71,20 @@
                     </p>
                     <p>{{ service.description }}</p>
                 </div>
-                <div class="position-absolute bottom-0 end-0">
+                <div class="position-absolute top-0 end-0 me-2">
                     {% if request.user.is_superuser %}
                     <small class="ml-3">
-                        <a href="">Edit</a>
+                        <a href="{% url 'edit_service' service.id %}">Edit</a>
                         <a class="text-danger" href="{% url 'delete_service' service.id %}">Delete</a>
                     </small>
                     {% endif %}
+                </div>
+                <div class="position-absolute bottom-0 end-0">
                     <div>
-                        {% with service.pricingtier_set.all|dictsortreversed:"price_per_unit"|first as highest_pricing_tier %}
+                        {% with service.pricing_tiers.all|dictsortreversed:"price_per_unit"|first as highest_pricing_tier %}
                             {% if highest_pricing_tier %}
-                                <p class="text-center my-0">
+                                <p class="text-center my-0 me-3">Starting price:</p>
+                                <p class="text-center my-0 me-3">
                                     {{ highest_pricing_tier.price_per_unit }}$/hour
                                 </p>
                             {% else %}
@@ -89,7 +92,7 @@
                             {% endif %}
                         {% endwith %}
                     </div>
-                    <a href="{% url 'service_details' service.id %}" class="btn btn-primary my-3 me-3">Read more</a>
+                    <a href="{% url 'service_details' service.id %}" class="btn btn-black my-3 me-3">Read more</a>
                 </div>
             </div>
             {% endfor %}
