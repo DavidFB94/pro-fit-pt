@@ -7,7 +7,10 @@ class ContactAdmin(admin.ModelAdmin):
         'name',
         'email',
         'message',
+        'read',
     )
+    list_display_links = ('name',)
+    list_editable = ('read',)
 
     ordering = ('name',)
 

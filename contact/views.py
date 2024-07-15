@@ -12,7 +12,7 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            message.success(request, 'Your message has been sent!')
+            messages.success(request, 'Your message has been sent!')
             return redirect('contact')
         else:
             messages.error(request,
