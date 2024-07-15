@@ -24,27 +24,6 @@
                 enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
-                <div id="formset-container">
-                    {{ formset.management_form }}
-                    {% for form in formset %}
-                    <div class="formset-item" id="form-{{ forloop.counter0 }}">
-                        {{ form.id }}
-                        <div class="form-group">
-                            <label for="{{ form.quantity.id_for_label }}">Quantity</label>
-                            {{ form.quantity }}
-                        </div>
-                        <div class="form-group">
-                            <label for="{{ form.price_per_unit.id_for_label }}">Price per Unit</label>
-                            {{ form.price_per_unit }}
-                        </div>
-                        <div class="form-group">
-                            <label for="{{ form.DELETE.id_for_label }}">Delete</label>
-                            {{ form.DELETE }}
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-                <button type="button" class="btn btn-outline-black rounded-0" id="add-formset">Add Pricing Tier</button>
                 <div class="text-right">
                     <a class="btn btn-outline-black rounded-0" href="{% url 'services' %}">Cancel</a>
                     <button class="btn btn-black rounded-0" type="submit">Update Product</button>
@@ -55,7 +34,3 @@
 </div>
 {% endblock %}
 
-{% block postloadjs %}
-{{ block.super }}
-<script src="{% static 'services/js/pricingtier.js' %}"></script>
-{% endblock %}

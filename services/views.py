@@ -6,7 +6,7 @@ from django.core.paginator import Paginator
 from django.db.models.functions import Lower
 
 from .models import Service, PricingTier, Category
-from .forms import ServiceForm, PricingTierForm, PricingTierFormSet
+from .forms import ServiceForm, PricingTier
 
 
 def all_services(request):
@@ -19,11 +19,11 @@ def all_services(request):
 
     # subquery to get the highest or lowest pricing tier for each service
     highest_pricing_tier = PricingTier.objects.filter(
-        service=OuterRef('pk')
+        services=OuterRef('pk')
     ).order_by('-price_per_unit').values('price_per_unit')[:1]
     
     lowest_pricing_tier = PricingTier.objects.filter(
-        service=OuterRef('pk')
+        services=OuterRef('pk')
     ).order_by('price_per_unit').values('price_per_unit')[:1]
 
     # fetch all services
@@ -64,7 +64,7 @@ def all_services(request):
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('services'))
             
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(description__icontains(query))
             services = services.filter(queries)
 
     # apply distinct after filtering/sorting to get unique services only
@@ -98,7 +98,7 @@ def service_details(request, service_id):
     """ A view to show individual service details """
 
     service = get_object_or_404(Service, pk=service_id)
-    pricing_tiers = PricingTier.objects.filter(service=service)
+    pricing_tiers = PricingTier.objects.filter(services=service)
 
     context = {
         'service': service,
@@ -117,24 +117,22 @@ def add_service(request):
 
     if request.method == 'POST':
         form = ServiceForm(request.POST, request.FILES)
-        formset = PricingTierFormSet(request.POST)
 
-        if form.is_valid() and formset.is_valid():
-            service = form.save()
-            formset.instance = service
-            formset.save()
+        if form.is_valid():
+            service = form.save(commit=False)
+            service.save()
+            pricing_tiers = form.cleaned_data.get('pricing_tiers')
+            service.pricing_tiers.set(pricing_tiers)
             messages.success(request, 'Successfully added service!')
             return redirect(reverse('service_details', args=[service.id]))
         else:
             messages.error(request, 'Failed to add service. Please ensure the form is valid.')
     else:
         form = ServiceForm()
-        formset = PricingTierFormSet()
 
     template = 'services/add_service.html'
     context = {
         'form': form,
-        'formset': formset,
     }
 
     return render(request, template, context)
@@ -148,17 +146,19 @@ def edit_service(request, service_id):
         return redirect(reverse('home'))
 
     service = get_object_or_404(Service, pk=service_id)
-    formset = PricingTierFormSet(request.POST)
+
     if request.method == 'POST':
         form = ServiceForm(request.POST, request.FILES, instance=service)
+
         if form.is_valid():
-            form.save()
+            service = form.save(commit=False)
+            service.save()
+            pricing_tiers = form.cleaned_data.get('pricing_tiers')
+            service.pricing_tiers.set(pricing_tiers)
             messages.success(request, 'Successfully updated service!')
-            return redirect(reverse('service_detail', args=[service.id]))
+            return redirect(reverse('service_details', args=[service.id]))
         else:
-            messages.error(request,
-                           ('Failed to update service. '
-                            'Please ensure the form is valid.'))
+            messages.error(request, 'Failed to update service. Please ensure the form is valid.')
     else:
         form = ServiceForm(instance=service)
         messages.info(request, f'You are editing {service.name}')
@@ -166,7 +166,6 @@ def edit_service(request, service_id):
     template = 'services/edit_service.html'
     context = {
         'form': form,
-        'formset': formset,
         'service': service,
     }
 
