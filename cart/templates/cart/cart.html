@@ -36,7 +36,7 @@
                     <tr>
                         <td class="p-3 w-25">
                             {% if "placeholder" in item.service.image.url %}
-                            <img class="card card-image rounded" src="{% static 'media/no-image.png' %}"
+                            <img class="card card-image rounded" src="{% static 'images/no-image.png' %}"
                                 alt="placeholder image">
                             {% else %}
                             <img class="card card-image rounded" src="{{ item.service.image.url }}"
@@ -102,5 +102,18 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script src="{% static 'cart/js/remove_item.js' %}"></script>
+<script>
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        let csrfToken = "{{ csrf_token }}";
+        let compositeKey = $(this).attr('id').split('remove_')[1];
+        let url = `/cart/remove/${compositeKey}/`;
+        let data = { 'csrfmiddlewaretoken': csrfToken };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    });
+</script>
 {% endblock %}
