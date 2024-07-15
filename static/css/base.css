@@ -93,6 +93,10 @@ body {
     cursor: pointer;
 }
 
+.card-body {
+    padding: 10px !important;
+}
+
 /* Bootstrap toasts */
 .message-container {
     position: fixed;
