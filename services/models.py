@@ -27,10 +27,10 @@ class Service(models.Model):
 
 
 class PricingTier(models.Model):
-    service = models.ForeignKey('Service', null=True, blank=True, on_delete=models.SET_NULL)
+    services = models.ManyToManyField(Service, related_name='pricing_tiers', blank=True)
     quantity = models.PositiveIntegerField(null=True, blank=True)
     price_per_unit = models.DecimalField(max_digits=8, decimal_places=2)
 
     def __str__(self):
-        return f"Package {self.quantity} - {self.price_per_unit}$/unit - total: {self.price_per_unit*self.quantity}$ - {self.service}"
+        return f"Package {self.quantity} - {self.price_per_unit}$/unit - total: {self.price_per_unit*self.quantity}$"
 
