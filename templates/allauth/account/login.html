@@ -9,7 +9,7 @@
 <div class="container top-margin">
     <div class="row">
         <div class="col-8 offset-md-2">
-            <h3>{% trans "Log In" %}</h3>
+            <h3>{% trans "Sign in" %}</h3>
         </div>
     </div>
     <div class="row">
@@ -20,6 +20,7 @@
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
+                <a href="{% url 'home' %}" class="btn">{% trans "Home" %}</a>
                 <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
             </form>
         </div>
