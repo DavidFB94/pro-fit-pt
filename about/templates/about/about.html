@@ -15,26 +15,31 @@
   <div class="container">
     <div class="row text-center">
       <div class="col">
-        <h2 class="text-black mt-3 text-decoration-underline">About</h2>
+        <h2 class="text-black mt-3 text-decoration-underline">About/FAQs</h2>
       </div>
     </div>
     <div class="row d-flex justify-content-center text-center">
       <div class="col-12 col-md-6">
-        <h3 class="my-2">About us</h3>
+        <h3 class="my-2"><small>About us</small></h3>
         <br>
         <div>
           <p>Trainers etc etc. Certificates "link to certificat site"</p>
+          <br>
+          <p>Follow us on facebook for regular updates!</p>
+          <a href="">Facebooklink.com</a>
+          <br>
+          <a href="">Privacy statement</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <h3 class="my-2">FAQs</h3>
+        <h3 class="my-2"><small>FAQs</small></h3>
         <br>
         <div>
           <div class="accordion" id="accordion">
             {% for faq in faqs %}
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ forloop.counter }}"
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ forloop.counter }}"
                   aria-expanded="False" aria-controls="collapse-{{ forloop.counter }}">
                   {{ faq.question }}
                 </button>
