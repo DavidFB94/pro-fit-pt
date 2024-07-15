@@ -21,10 +21,10 @@
                 {% for item in cart_items %}
                 <div class="row">
                     <div class="col-3 my-1">
-                        {% if "placeholder" in service.image.url %}
-                        <img class="w-100" src="{% static 'media/no-image.png' %}" alt="placeholder image">
+                        {% if "placeholder" in item.service.image.url %}
+                        <img class="w-100" src="{% static 'images/no-image.png' %}" alt="placeholder image">
                         {% else %}
-                        <img class="w-100" src="{{ service.image.url }}" alt="{{ service.name }}">
+                        <img class="w-100" src="{{ item.service.image.url }}" alt="{{ item.service.name }}">
                         {% endif %}
                     </div>
                     <div class="col-9">

@@ -22,22 +22,24 @@
             <div class="card d-flex flex-row my-3 border">
                 <div class="d-none d-sm-block">
                     {% if "placeholder" in service.image.url %}
-                    <img class="card card-image" src="{% static 'media/no-image.png' %}" alt="placeholder image">
+                    <img class="card card-image" src="{% static 'images/no-image.png' %}" alt="placeholder image">
                     {% else %}
                     <img class="card card-image" src="{{ service.image.url }}" alt="{{ service.name }}">
                     {% endif %}
                 </div>
                 <div class="ms-3">
                     <h2>{{ service.name }}</h2>
-                    <p><small><i class="fa-solid fa-tags"></i> <a class="text-decoration-none"
-                                href="{% url 'services' %}?category={{ service.category.name }}">
+                    <p>
+                        <small>
+                            <i class="fa-solid fa-tags"></i>
+                            <a class="text-decoration-none" href="{% url 'services' %}?category={{ service.category.name }}">
                                 {{ service.category.name }}
                             </a>
                         </small>
                     </p>
                     <p>{{ service.description }}</p>
                 </div>
-                <div class="position-absolute bottom-0 end-0">
+                <div class="position-absolute top-0 end-0 me-2">
                     {% if request.user.is_superuser %}
                     <small class="ml-3">
                         <a href="">Edit</a>
@@ -67,12 +69,12 @@
                                 {% endfor %}
                             </select>
                         </div>
-                        <div class="d-flex flex-row">
+                        <div class="d-flex flex-row align-items-center">
                             <div class="mb-3 me-auto">
                                 <p><strong>Total Price:</strong></p>
                                 <p id="total_price">0.00 $</p>
                             </div>
-                            <input class="btn my-2 ms-auto" type="submit" value="Add to cart">
+                            <input class="btn btn-black ms-auto my-2" type="submit" value="Add to cart">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         {% endif %}
