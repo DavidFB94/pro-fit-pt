@@ -136,7 +136,7 @@ WSGI_APPLICATION = 'pro_fit_pt.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-if "DATABASE_URL" not in os.environ:
+if "DATABASE_URL" in os.environ:
     print("connected to PostgreSQL")
     DATABASES = {
         "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
