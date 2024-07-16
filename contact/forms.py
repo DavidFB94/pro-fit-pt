@@ -21,5 +21,5 @@ class ContactForm(forms.ModelForm):
 
         for field in self.fields:
             self.fields[field].widget.attrs['placeholder'] = placeholders[field]
-            self.fields[field].widget.attrs['class'] = ('border-black ' 'rounded-0 ')
+            self.fields[field].widget.attrs['class'] = ('border-color')
             self.fields[field].label = False
