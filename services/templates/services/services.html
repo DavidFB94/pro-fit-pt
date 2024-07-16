@@ -28,7 +28,7 @@
         <div class="col-12 d-flex justify-content-evenly align-items-center">
             <p class="text-muted mt-3 text-center">
                 {% if search_term or current_categories or current_sorting != 'None_None' %}
-                    <span class="small"><a href="{% url 'services' %}">Services Home</a> | </span>
+                <span class="small"><a href="{% url 'services' %}">Services Home</a> | </span>
                 {% endif %}
                 {{ total_services_count }} Service(s){% if search_term %} found for 
                 <strong>"{{ search_term }}"</strong>
@@ -75,9 +75,30 @@
                     {% if request.user.is_superuser %}
                     <small class="ml-3">
                         <a href="{% url 'edit_service' service.id %}">Edit</a>
-                        <a class="text-danger" href="{% url 'delete_service' service.id %}">Delete</a>
+                        <!-- Button delete service modal -->
+                        <a class="text-danger remove-item" data-bs-toggle="modal" data-bs-target="#modal-{{ service.id }}">
+                            Delete
+                        </a>
                     </small>
                     {% endif %}
+                </div>
+                <!-- Delete Modal -->
+                <div class="modal fade" id="modal-{{ service.id }}" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalLabel">Delete confirmation</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete this service?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                <a class="btn btn-danger" href="{% url 'delete_service' service.id %}">Delete</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="position-absolute bottom-0 end-0">
                     <div>
@@ -129,7 +150,7 @@
     </div>
 </div>
 {% endblock %}
-
+                    
 {% block postloadjs %}
 {{ block.super }}
 <script src="{% static 'services/js/sort_services.js' %}"></script>
