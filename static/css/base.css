@@ -25,11 +25,15 @@ body {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: white;
+	background: whitesmoke;
 	z-index: -1;
 }
 
-/* Images styles */
+#banner {
+    height: 35px;
+}
+
+/* Card styles */
 .card {
     height: 200px;
 }
@@ -37,6 +41,10 @@ body {
 .card-image {
     width: 200px;
     height: 200px;
+}
+
+.card-body {
+    padding: 10px !important;
 }
 
 /* from Bulma */
