@@ -48,53 +48,79 @@ body {
     width: 1.5rem;
 }
 
+/* Text and button styles */
 .logo-font {
     text-transform: uppercase;
+    
 }
 
 .main-logo-link {
     width: fit-content;
 }
 
-.hire-now-button {
-    background: #222;
-    color: white;
-    min-width: 260px;
+.text-color {
+    color: #4C4C4C !important;
 }
 
-.btn-black {
-    background: black;
+.hire-now-button {
+    background: #4c4c4cbf;
     color: white;
+    min-width: 200px;
 }
 
 .hire-now-button:hover,
 .hire-now-button:active,
-.hire-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #111;
+.hire-now-button:focus {
+    background-color: #4C4C4C !important;
     color: white;
 }
 
-.text-black {
-    color: #000 !important;
+.btn-color {
+    background: #454D43;
+    color: white;
 }
 
-.border-black {
-    border: 1px solid black !important;
+.btn-color:hover,
+.btn-color:active,
+.btn-color:focus {
+    background: #4c4c4cbf;
+    color: white;
+}
+
+.border {
+    border-color: #4C4C4C;
+    border-style: solid !important;
+    border-radius: 0px !important;
+    border-width: 2px !important;
+}
+
+.border:hover,
+.border:active,
+.border:focus {
+    border-color: transparent !important;
+}
+
+.border-solid {
+    border-color: #4C4C4C !important;
+    border-style: solid !important;
+    border-radius: 0px !important;
+    border-width: 2px !important;
+}
+
+.bg-dark {
+    background-color: #4C4C4C !important;
+}
+
+.bg-dark-75 {
+    background-color: #4c4c4cbf !important;
 }
 
 .bg-white {
-    background: white !important
+    background: whitesmoke !important
 }
 
 .remove-item:hover {
     cursor: pointer;
-}
-
-.card-body {
-    padding: 10px !important;
 }
 
 /* Bootstrap toasts */
