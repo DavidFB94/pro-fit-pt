@@ -13,7 +13,6 @@ import time
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
-
     def __init__(self, request):
         self.request = request
 
@@ -98,7 +97,7 @@ class StripeWH_Handler:
                     original_cart=cart,
                     stripe_pid=pid,
                 )
-                order.exists = True
+                order_exists = True
                 break
             except Order.DoesNotExist:
                 attempt += 1

@@ -31,9 +31,6 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
-    stripe_public_key = settings.STRIPE_PUBLIC_KEY
-    stripe_secret_key = settings.STRIPE_SECRET_KEY
-
     if request.method == 'POST':
         cart = request.session.get('cart', {})
 
@@ -86,7 +83,6 @@ def checkout(request):
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
-
     else:
         cart = request.session.get('cart', {})
         if not cart:
@@ -96,7 +92,7 @@ def checkout(request):
         current_cart = cart_contents(request)
         total = current_cart['grand_total']
         stripe_total = round(total * 100)
-        stripe.api_key = stripe_secret_key
+        stripe.api_key = settings.STRIPE_SECRET_KEY
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
@@ -123,17 +119,17 @@ def checkout(request):
         else:
             order_form = OrderForm()
 
-    if not stripe_public_key:
+    if not settings.STRIPE_PUBLIC_KEY:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
+
     template = 'checkout/checkout.html'
     context = {
-        'order_form': order_form,
-        'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
-    }
-
-    return render(request, template, context)
+            'order_form': order_form,
+            'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
+            'client_secret': intent.client_secret,
+        }
+    return render(request, 'checkout/checkout.html', context)
 
 
 def checkout_success(request, order_number):
