@@ -14,10 +14,10 @@
 <div class="container">
     <div class="row text-center">
         <div class="col-12">
-            <h2 class="text-black mt-3 text-decoration-underline">Our services</h2>
+            <h2 class="text-color mt-3 text-decoration-underline">Our services</h2>
             {% for c in current_categories %}
             <a class="category-badge text-decoration-none" href="{% url 'services' %}?category={{ c.name }}">
-                <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark my-3">
+                <span class="p-2 mt-2 badge badge-white text-color rounded-0 border border-dark my-3">
                     {{ c.name }}
                 </span>
             </a>
@@ -113,7 +113,7 @@
                             {% endif %}
                         {% endwith %}
                     </div>
-                    <a href="{% url 'service_details' service.id %}" class="btn btn-black my-3 me-3">Read more</a>
+                    <a href="{% url 'service_details' service.id %}" class="btn btn-color rounded-0 my-3 me-3">Read more</a>
                 </div>
             </div>
             {% endfor %}
