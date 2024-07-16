@@ -42,9 +42,9 @@
                 <div class="position-absolute top-0 end-0 me-2">
                     {% if request.user.is_superuser %}
                     <small class="ml-3">
-                        <a href="">Edit</a>
+                        <a href="{% url 'edit_service' service.id %}">Edit</a>
                         <!-- Button delete service modal -->
-                        <a class="text-danger remove-item" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <a class="text-danger remove-item" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#modal">
                             Delete
                         </a>
                     </small>
@@ -53,11 +53,11 @@
             </div>
         </div>
         <!-- Delete Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete confirmation</h1>
+                        <h1 class="modal-title fs-5" id="modalLabel">Delete confirmation</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
