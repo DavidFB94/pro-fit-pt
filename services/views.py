@@ -7,6 +7,7 @@ from django.db.models.functions import Lower
 
 from .models import Service, PricingTier, Category
 from .forms import ServiceForm, PricingTier
+import cloudinary.uploader
 
 
 def all_services(request):
@@ -151,6 +152,10 @@ def edit_service(request, service_id):
         form = ServiceForm(request.POST, request.FILES, instance=service)
 
         if form.is_valid():
+            if form.cleaned_data.get('delete_image') and service.image:
+                public_id = service.image.public_id
+                cloudinary.uploader.destroy(public_id)
+                service.image = None
             service = form.save(commit=False)
             service.save()
             pricing_tiers = form.cleaned_data.get('pricing_tiers')

@@ -1,6 +1,5 @@
 from django import forms
 from django.core.validators import MinValueValidator
-from django.forms import modelformset_factory
 from .models import Service, Category, PricingTier
 
 
@@ -12,7 +11,7 @@ class ServiceForm(forms.ModelForm):
 
     class Meta:
         model = Service
-        fields = ['name', 'category', 'description', 'image', 'pricing_tiers']
+        fields = ['name', 'category', 'description', 'pricing_tiers', 'image',]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -21,3 +20,6 @@ class ServiceForm(forms.ModelForm):
         self.fields['category'].choices = category_choices
         for field in self.fields.values():
             field.widget.attrs['class'] = 'border-color'
+
+        if self.instance and self.instance.pk and self.instance.image:
+            self.fields['delete_image'] = forms.BooleanField(required=False, label='Delete image') 
