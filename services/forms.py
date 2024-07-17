@@ -17,6 +17,8 @@ class ServiceForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         categories = Category.objects.all()
         category_choices = [(c.id, c.name) for c in categories]
+
+        self.fields['name'].widget.attrs['autofocus'] = True
         self.fields['category'].choices = category_choices
         for field in self.fields.values():
             field.widget.attrs['class'] = 'border-color'
