@@ -22,6 +22,8 @@ class ServiceForm(forms.ModelForm):
         self.fields['category'].choices = category_choices
         for field in self.fields.values():
             field.widget.attrs['class'] = 'border-color'
+        self.fields['image'].required = False
+        self.fields['image'].label = 'Image'
 
         if self.instance and self.instance.pk and self.instance.image:
             self.fields['delete_image'] = forms.BooleanField(required=False, label='Delete image') 
