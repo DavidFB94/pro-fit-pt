@@ -16,12 +16,23 @@ def add_to_cart(request, item_id):
     """
     Add a quantity of the specified service to the shopping cart
     """
-
     service = get_object_or_404(Service, pk=item_id)
-    pricing_tier_id = int(request.POST.get('service_quantity'))
-    pricing_tier = get_object_or_404(PricingTier, id=pricing_tier_id)
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
+
+    # Get service_quantity from POST data
+    service_quantity = request.POST.get('service_quantity')
+    if not service_quantity:
+        messages.error(request, 'Please select a valid quantity.')
+        return redirect(redirect_url)
+    
+    try:
+        pricing_tier_id = int(service_quantity)
+    except (ValueError, TypeError):
+        messages.error(request, 'Invalid quantity selected.')
+        return redirect(redirect_url)
+
+    pricing_tier = get_object_or_404(PricingTier, id=pricing_tier_id)
 
     # Composite key using item_id and pricing_tier_id
     composite_key = f"{item_id}_{pricing_tier.id}"
