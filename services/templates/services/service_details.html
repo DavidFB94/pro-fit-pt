@@ -19,7 +19,7 @@
     </div>
     <div class="row d-flex justify-content-center align-items-start">
         <div class="col-lg-8">
-            <div class="card d-flex flex-row my-3 border">
+            <div class="card d-flex flex-row my-3 rounded-0">
                 <div class="d-none d-sm-block">
                     {% if "placeholder" in service.image.url %}
                     <img class="card card-image" src="{% static 'images/no-image.png' %}" alt="placeholder image">
@@ -72,7 +72,7 @@
         </div>
         <!-- Adding to cart -->
         <div class="col-lg-4">
-            <div class="card my-3 border">
+            <div class="card my-3 rounded-0">
                 <div class="card-body">
                     <h5 class="card-title">Buy sessions</h5>
                     <form class="form-session-quantity" action="{% url 'add_to_cart' service.id %}" method="POST">
@@ -96,7 +96,7 @@
                                 <p><strong>Total Price:</strong></p>
                                 <p id="total_price">0.00 $</p>
                             </div>
-                            <input class="btn btn-color ms-auto my-2" type="submit" value="Add to cart">
+                            <input class="btn btn-color ms-auto rounded-0 my-2" type="submit" value="Add to cart">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         {% endif %}
