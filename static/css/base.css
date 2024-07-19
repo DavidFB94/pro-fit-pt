@@ -132,6 +132,10 @@ body {
     cursor: pointer;
 }
 
+.btn-min-width {
+    min-width: 110px;
+}
+
 /* Bootstrap toasts */
 .message-container {
     position: fixed;
