@@ -35,7 +35,7 @@ ALLOWED_HOSTS = [
     ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-davidfb94-profitpt-wfk2lhjgkcn.ws.codeinstitute-ide.net/',
+    'https://8000-davidfb94-profitpt-wfk2lhjgkcn.ws.codeinstitute-ide.net',
     'https://pro-fit-pt-dcb56d3b7224.herokuapp.com/',
 ]
 
