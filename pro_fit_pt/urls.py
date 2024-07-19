@@ -31,4 +31,4 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
     path('about/', include('about.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-handler404 = 'boutique_ado.views.handler404'
+handler404 = 'pro-fit-pt.views.handler404'
