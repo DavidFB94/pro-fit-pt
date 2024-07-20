@@ -150,3 +150,162 @@ FAQs
 - ![screenshot](documentation/wireframes/desktop-faqs.png)
 
 </details>
+
+## Features
+
+### Existing Features
+
+ **#1 Header with Logo home redirect**
+
+- Adds maneuverability to the site.
+
+![screenshot](documentation/features/feature-01.png)
+
+**#2 Navbar links to "Our Services"  in drop-down menu**
+
+-  Includes links to all services and service categories. Adds maneuverability to the site.
+
+![screenshot](documentation/features/feature-02.png)
+
+**#3 Navbar links to About/FAQs and Contact section**
+
+- Adds maneuverability to the site.
+
+![screenshot](documentation/features/feature-03.png)
+
+**#4 Search field**
+
+- For search queries. Adds maneuverability to the site. Makes it easier for the user to find what they are looking for.
+
+![screenshot](documentation/features/feature-04.png)
+
+**#5 "My Account" drop-down menu**
+
+- Includes link to register/login/logout, profile page (registered users), and "Add Services" (for admin users only). Adds maneuverability to the site.
+
+![screenshot](documentation/features/feature-05.1.png)
+![screenshot](documentation/features/feature-05.2.png)
+![screenshot](documentation/features/feature-05.3.png)
+
+**#6 Cart display**
+
+- Updates with cart content being added. Displays total cost. Link to "Shopping cart". Adds maneuverability to the site. Provides visual feedback for the user. Displays a cart preview when an item is added, with link to shopping cart.
+
+![screenshot](documentation/features/feature-06-1.png)
+![screenshot](documentation/features/feature-06-2.png)
+![screenshot](documentation/features/feature-06-3.png)
+
+**#7 Site Banner**
+
+- Highlights the sites deal to get price reduction for buying more services at once. Will encourage users to buy more.
+
+![screenshot](documentation/features/feature-07.png)
+
+**#8 Feedback messages**
+
+- Toast messages are displayed on user action. Message: Success, Error and Info. Provides instant feedback to the user.
+
+![screenshot](documentation/features/feature-08-1.png)
+![screenshot](documentation/features/feature-08-2.png)
+![screenshot](documentation/features/feature-08-3.png)
+
+**#9 Landing page**
+
+- Includes inspiring message for the sites services and link to Personal Training category. Adds maneuverability to the site. Makes it easy for the user to find the sites main service.
+
+![screenshot](documentation/features/feature-09.png)
+
+**#10 Our services cards**
+
+- Services display with all services, shown in a paginated list. Includes "Services home" link, number of found services, sorting and current category (if selected). Displays service name, image, category tag, description and starting price.
+
+![screenshot](documentation/features/feature-10.1.png)
+![screenshot](documentation/features/feature-10.2.png)
+![screenshot](documentation/features/feature-10.2.png)
+
+**#11 Service cards edit/delete links (ADMIN ONLY)**
+
+-  Links to edit/delete a service (ADMIN ONLY). Includes a delete confirmation popup modal.
+
+![screenshot](documentation/features/feature-11.1.png)
+![screenshot](documentation/features/feature-11.2.png)
+![screenshot](documentation/features/feature-11.3.png)
+
+**#12 Service cards Read More link**
+
+- "Read More" link to service details.
+
+![screenshot](documentation/features/feature-12.png)
+
+**#13 Service details**
+
+- Display service details. Displays service name, image, category tag, full description. Includes "Buy sessions" section, with quantity selection drop-down, price per unit + total price, and "Add to cart" link. Also includes edit/delete links (ADMIN ONLY).
+
+![screenshot](documentation/features/feature-13.png)
+
+**#14 Shopping Cart**
+
+- Displays items in the cart with service info and grand total. Includes links to keep shopping, remove an item and checkout.
+
+![screenshot](documentation/features/feature-14.1.png)
+![screenshot](documentation/features/feature-14.2.png)
+
+**#15 Checkout**
+
+- Checkout form with order summery. Includes option to save customer information to their profile (if registered user), card payments with Stripe, link back to current cart, total charge amount, and complete order button.
+
+![screenshot](documentation/features/feature-15.png)
+
+**#16 User registration**
+
+- Sign Up form for user registration. Includes links to home page, and sign up button for completing the form. User verification
+by email.
+
+![screenshot](documentation/features/feature-16.1.png)
+![screenshot](documentation/features/feature-16.2.png)
+![screenshot](documentation/features/feature-16.3.png)
+![screenshot](documentation/features/feature-16.4.png)
+
+**#17 User Sign in**
+
+- Sign in form for user login. Includes links to home page, and confirmation button for signing in. 
+
+![screenshot](documentation/features/feature-17.png)
+
+**#18 User Log out**
+
+- Log out screen with log out confirmation. 
+
+![screenshot](documentation/features/feature-18.png)
+
+**#19 User Profile**
+
+- Default User Information form and order history. Includes option to save/update customer information to their profile (if registered user), which will be used in the next checkout. Order history includes links to the order summary on previous orders.
+
+![screenshot](documentation/features/feature-19.png)
+
+**#20 About/FAQs page**
+
+- About us section with site description, links to partners, facebook and privacy statement. FAQs section with accordion to save screen space.
+
+![screenshot](documentation/features/feature-20.png)
+
+**21 Contact page**
+
+- Includes contact form to send a message to the admin and a section for phone contact and phone-line operating hours. 
+
+![screenshot](documentation/features/feature-21.png)
+
+### Future Features
+
+ **#1 Newsletter signup**
+
+- Newsletter signup form, to add the email address to the database for newsletter emails.
+
+ **#2 Sending mass emails**
+
+- Sending emails to all users that has signed up for the newsletter.
+
+ **#3 Front end pricing tier creation**
+
+- Allowing for new pricing tiers to be created in the front end for admins
