@@ -33,4 +33,3 @@ class PricingTier(models.Model):
 
     def __str__(self):
         return f"Package {self.quantity} - {self.price_per_unit}$/unit - total: {self.price_per_unit*self.quantity}$"
-

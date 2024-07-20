@@ -131,9 +131,12 @@ def add_service(request):
     else:
         form = ServiceForm()
 
+    pricing_tiers = PricingTier.objects.all().order_by('quantity')
+
     template = 'services/add_service.html'
     context = {
         'form': form,
+        'pricing_tiers': pricing_tiers,
     }
 
     return render(request, template, context)
