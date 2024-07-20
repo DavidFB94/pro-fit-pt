@@ -95,3 +95,58 @@ I used [coolors.co](https://coolors.co/ffffff-f5f5f5-4c4c4c) to generate my colo
 - As a site admin I can add/edit/delete services so that I can manage my service inventory.
 
 - (Future Feature) As a site admin I can send mass emails to users, if they have signed up for it, so that I can increase traffic and sales on the site.
+
+## Wireframes
+Wireframes were developed for mobile and desktop sizes.
+
+I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+
+### Mobile Wireframes
+
+<details>
+<summary> Click here to see the Mobile Wireframes </summary>
+
+Home
+- ![screenshot](documentation/wireframes/mobile-home.png)
+
+Services
+- ![screenshot](documentation/wireframes/mobile-services.png)
+
+Service Details
+- ![screenshot](documentation/wireframes/mobile-service-details.png)
+
+About
+- ![screenshot](documentation/wireframes/mobile-about.png)
+
+Contact
+- ![screenshot](documentation/wireframes/mobile-contact.png)
+
+FAQs
+- ![screenshot](documentation/wireframes/mobile-faqs.png)
+
+</details>
+
+### Desktop Wireframes
+
+<details>
+<summary> Click here to see the Desktop Wireframes </summary>
+
+Home
+- ![screenshot](documentation/wireframes/desktop-home.png)
+
+Services
+- ![screenshot](documentation/wireframes/desktop-services.png)
+
+Service Details
+- ![screenshot](documentation/wireframes/desktop-service-details.png)
+
+About
+- ![screenshot](documentation/wireframes/desktop-about.png)
+
+Contact
+- ![screenshot](documentation/wireframes/desktop-contact.png)
+
+FAQs
+- ![screenshot](documentation/wireframes/desktop-faqs.png)
+
+</details>
