@@ -286,7 +286,7 @@ by email.
 
 **#20 About/FAQs page**
 
-- About us section with site description, links to partners, facebook and privacy statement. FAQs section with accordion to save screen space.
+- About us section with site description, links to partners, facebook and privacy statement. FAQs section with accordion to save screen space (FAQs can be added/edited/removed in admin dashboard).
 
 ![screenshot](documentation/features/feature-20.png)
 
