@@ -353,3 +353,54 @@ by email.
 - [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
 
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, code suggestions and explain things.
+
+## Database Design
+
+Initial ERD:
+
+![screenshot](documentation/initial-erd.png)
+
+Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models.
+
+Understanding the relationships between different tables can save time later in the project.
+
+I have used `pygraphviz` and `django-extensions` to auto-generate an ERD.
+
+The steps taken were as follows:
+
+- In the terminal: `sudo apt update`
+
+- then: `sudo apt-get install python3-dev graphviz libgraphviz-dev pkg-config`
+
+- then type `Y` to proceed
+
+- then: `pip3 install django-extensions pygraphviz`
+
+- in my `settings.py` file, I added the following to my `INSTALLED_APPS`:
+
+```python
+
+INSTALLED_APPS = [
+
+...
+
+'django_extensions',
+
+...
+
+]
+
+```
+
+- back in the terminal: `python3 manage.py graph_models -a -o erd.png`
+
+- dragged the new `erd.png` file into my `documentation/` folder
+
+- removed `'django_extensions',` from my `INSTALLED_APPS`
+
+- finally, in the terminal: `pip3 uninstall django-extensions pygraphviz -y`
+
+  
+![erd](documentation/erd.png)
+
+source: [medium.com](https://medium.com/@yathomasi1/1-using-django-extensions-to-visualize-the-database-diagram-in-django-application-c5fa7e710e16)
