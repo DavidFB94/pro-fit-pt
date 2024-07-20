@@ -404,3 +404,48 @@ INSTALLED_APPS = [
 ![erd](documentation/erd.png)
 
 source: [medium.com](https://medium.com/@yathomasi1/1-using-django-extensions-to-visualize-the-database-diagram-in-django-application-c5fa7e710e16)
+
+## Agile Development Process
+
+### GitHub Projects
+
+[GitHub Projects](https://github.com/DavidFB94/pro-fit-pt/projects) served as an Agile tool for this project.
+
+It isn't a specialized tool, but with the right tags and project creation/issue assignments, it can be made to work.
+
+Through it, user stories, issues, and milestone tasks were planned, then tracked on a weekly basis using the basic Kanban board.
+
+![screenshot](documentation/gh-kanban-1.png)
+
+### GitHub Issues
+
+[GitHub Issues](https://github.com/DavidFB94/pro-fit-pt/issues) served as an another Agile tool.
+
+There, I used my own **User Story Template** to manage user stories.
+
+It also helped with milestone iterations on a weekly basis.
+
+![screenshot](documentation/gh-milestones.png)
+
+- [Open Issues](https://github.com/DavidFB94/pro-fit-pt/issues) [![GitHub issues](https://img.shields.io/github/issues/DavidFB94/pro-fit-pt)](https://github.com/DavidFB94/pro-fit-pt/issues)
+
+![screenshot](documentation/gh-issues-open.png)
+
+- [Closed Issues](https://github.com/DavidFB94/pro-fit-pt/issues?q=is%3Aissue+is%3Aclosed) [![GitHub closed issues](https://img.shields.io/github/issues-closed/DavidFB94/pro-fit-pt)](https://github.com/DavidFB94/pro-fit-pt/issues?q=is%3Aissue+is%3Aclosed)
+
+![screenshot](documentation/gh-issues-closed-1.png)
+![screenshot](documentation/gh-issues-closed-2.png)
+
+### MoSCoW Prioritization
+
+I've decomposed my Epics into stories prior to prioritizing and implementing them.
+
+Using this approach, I was able to apply the MoSCow prioritization and labels to my user stories within the Issues tab.
+
+-  **Must Have**: guaranteed to be delivered (*max 60% of stories*)
+
+-  **Should Have**: adds significant value, but not vital (*the rest ~20% of stories*)
+
+-  **Could Have**: has small impact if left out (*20% of stories*)
+
+-  **Won't Have**: not a priority for this iteration
