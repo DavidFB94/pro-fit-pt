@@ -167,7 +167,7 @@ FAQs
 
 ![screenshot](documentation/features/feature-02.png)
 
-**#3 Navbar links to Home/About/FAQs and Contact section**
+**#3 Navbar links to Home, About and Contact section**
 
 - Adds maneuverability to the site.
 
@@ -297,9 +297,9 @@ by email.
 
 ![screenshot](documentation/features/feature-19.png)
 
-**#22 About/FAQs page**
+**#22 About page**
 
-- About us section with site description, links to partners, facebook and privacy statement. FAQs section with accordion to save screen space (FAQs can be added/edited/removed in admin dashboard).
+- About us section with site description, links to partners, facebook and privacy statement. FAQs section with accordion to save screen space (FAQs can be added/edited/removed in admin dashboard). Newsletter signup form.
 
 ![screenshot](documentation/features/feature-20.png)
 
@@ -479,8 +479,6 @@ It is still in its early development stages, although it already has a newslette
 Social media can potentially build a community of users around the business, and boost site visitor numbers, especially when using larger platforms such a Facebook.
 
 A newsletter list can be used by the business to send regular messages to site users.
-For example, what items are on special offer, new items in stock,
-updates to business hours, notifications of events, and much more!
 
 For example, what items are on special offer, new items in stock, updates to business hours, notifications of events, and much more!
 
@@ -897,7 +895,7 @@ There are no significant differences between local vs deployed version.
 
 ### Content
 
-The core e-commerce functionalities and templates (services + checkout flow) in this project was set up following Code Institutes walk-through. After the core functionalities were in place, adjustments were made to accommodate my design for the site.
+The core e-commerce functionalities and templates (services + checkout flow + payments) in this project was set up following Code Institutes walk-through. After the core functionalities were in place, adjustments were made to accommodate my design for the site.
 
 | Source | Location | Notes |
 
@@ -915,7 +913,7 @@ The core e-commerce functionalities and templates (services + checkout flow) in 
 
 | [Bootstrap5](https://getbootstrap.com/docs/5.3/components/card/) | services + service details | card layout |
 
-| [Bootstrap5](https://getbootstrap.com/docs/5.3/components/accordion/) | about/faqs | FAQs accordion |
+| [Bootstrap5](https://getbootstrap.com/docs/5.3/components/accordion/) | about | FAQs accordion |
 
 | [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
 
