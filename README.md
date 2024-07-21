@@ -366,6 +366,12 @@ by email.
 
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, code suggestions and explain things.
 
+- [[Miro]](https://miro.com/) used to build initial ERD.
+
+- [[TinyPNG]](https://tinypng.com/) image compression.
+
+- [[Pixelied]](https://pixelied.com/convert/jpg-converter/jpg-to-webp) image format converter.
+
 ## Database Design
 
 Initial ERD:
