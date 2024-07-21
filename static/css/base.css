@@ -33,6 +33,10 @@ body {
     height: 35px;
 }
 
+.service-name {
+    font-size: large !important;
+}
+
 /* Card styles */
 .card {
     height: 200px;
