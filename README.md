@@ -264,9 +264,10 @@ FAQs
 
 **#17 Checkout**
 
-- Checkout form with order summery. Includes option to save customer information to their profile (if registered user), card payments with Stripe, link back to current cart, total charge amount, and complete order button.
+- Checkout form with order summery. Includes option to save customer information to their profile (if registered user), card payments with Stripe, link back to current cart, total charge amount, and complete order button. Redirects to order summary screen, and a confirmation email is sent. 
 
 ![screenshot](documentation/features/feature-15.png)
+![screenshot](documentation/features/feature-15.1.png)
 
 **#18 User registration**
 
