@@ -191,9 +191,9 @@ FAQs
 
 - Updates with cart content being added. Displays total cost. Link to "Shopping cart". Adds maneuverability to the site. Provides visual feedback for the user. Displays a cart preview when an item is added, with link to shopping cart.
 
-![screenshot](documentation/features/feature-06-1.png)
-![screenshot](documentation/features/feature-06-2.png)
-![screenshot](documentation/features/feature-06-3.png)
+![screenshot](documentation/features/feature-06.1.png)
+![screenshot](documentation/features/feature-06.2.png)
+![screenshot](documentation/features/feature-06.3.png)
 
 **#7 Site Banner**
 
