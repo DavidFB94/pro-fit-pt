@@ -27,9 +27,9 @@
                     <img class="card card-image" src="{{ service.image.url }}" alt="{{ service.name }}">
                     {% endif %}
                 </div>
-                <div class="ms-3 p-2">
+                <div class="ms-3 pe-2">
                     <h2>{{ service.name }}</h2>
-                    <p>
+                    <p class="mb-0">
                         <small>
                             <i class="fa-solid fa-tags"></i>
                             <a class="text-decoration-none" href="{% url 'services' %}?category={{ service.category.name }}">
@@ -37,7 +37,7 @@
                             </a>
                         </small>
                     </p>
-                    <p>{{ service.description }}</p>
+                    <p class="mb-0">{{ service.description }}</p>
                 </div>
                 <div class="position-absolute top-0 end-0 me-2">
                     {% if request.user.is_superuser %}
