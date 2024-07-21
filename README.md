@@ -161,13 +161,13 @@ FAQs
 
 ![screenshot](documentation/features/feature-01.png)
 
-**#2 Navbar links to "Our Services"  in drop-down menu**
+**#2 Navbar links to "Our Services" in drop-down menu**
 
 -  Includes links to all services and service categories. Adds maneuverability to the site.
 
 ![screenshot](documentation/features/feature-02.png)
 
-**#3 Navbar links to About/FAQs and Contact section**
+**#3 Navbar links to Home/About/FAQs and Contact section**
 
 - Adds maneuverability to the site.
 
@@ -221,7 +221,7 @@ FAQs
 
 ![screenshot](documentation/features/feature-10.1.png)
 ![screenshot](documentation/features/feature-10.2.png)
-![screenshot](documentation/features/feature-10.2.png)
+![screenshot](documentation/features/feature-10.3.png)
 
 **#11 Service cards edit/delete links (ADMIN ONLY)**
 
@@ -303,11 +303,17 @@ by email.
 
 ![screenshot](documentation/features/feature-20.png)
 
-**23 Contact page**
+**#23 Contact page**
 
 - Includes contact form to send a message to the admin (can be read in the contacs tab in the dashboard) and a section for phone contact and phone-line operating hours. 
 
 ![screenshot](documentation/features/feature-21.png)
+
+**#24 Mobile Navbar**
+
+- Includes links to navigation in burger dropdown menu. Adds maneuverability to the site for mobile users. Saves screen space.
+
+![screenshot](documentation/features/feature-24.png)
 
 ### Future Features
 
