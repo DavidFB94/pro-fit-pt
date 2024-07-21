@@ -889,8 +889,68 @@ You can fork this repository by using the following steps:
 
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
-  
-
 ### Local VS Deployment
 
 There are no significant differences between local vs deployed version.
+
+## Credits
+
+### Content
+
+The core e-commerce functionalities and templates (services + checkout flow) in this project was set up following Code Institutes walk-through. After the core functionalities were in place, adjustments were made to accommodate my design for the site.
+
+| Source | Location | Notes |
+
+| --- | --- | --- |
+
+| [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
+
+| [Djangoproject](https://docs.djangoproject.com/en/5.0/ref/contrib/messages/) | views | Setting up Django messages |
+
+| [Djangoproject](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.query.QuerySet.distinct) | views | Using distinct() for fetching unique service |
+
+| [Bootstrap5](https://getbootstrap.com/docs/5.3/layout/grid/) | Page layout | Using Bootstrap grid system |
+
+| [Bootstrap5](https://getbootstrap.com/docs/5.3/components/modal/) | services + service details | interactive pop-up (modal) for delete confirmation |
+
+| [Bootstrap5](https://getbootstrap.com/docs/5.3/components/card/) | services + service details | card layout |
+
+| [Bootstrap5](https://getbootstrap.com/docs/5.3/components/accordion/) | about/faqs | FAQs accordion |
+
+| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
+
+| [Cloudinary](https://cloudinary.com/documentation/django_image_and_video_upload#django_forms_and_models_workflow) | services + service details | how to use cloudinary field | 
+
+### Media
+
+| Source | Location | Type | Notes |
+
+| --- | --- | --- | --- |
+
+| [Freepik](https://www.freepik.com/free-photo/personal-trainer-gym_2833883.htm) | home page | image | Background image |
+
+| [Pexels](https://www.pexels.com/sv-se/foto/man-par-kvinna-ansiktslosa-6456305/) | services + service details | image | Counseling image |
+
+| [Pexels](https://www.pexels.com/sv-se/foto/1566404/) | services + service details | image | PT Weightlifting image |
+
+| [Pexels](https://www.pexels.com/sv-se/foto/halsosam-man-avslappning-sport-6787357/) | services + service details | image | PT Wellness image |
+
+| [Unsplash](https://unsplash.com/photos/black-adjustable-weight-barbell-E3wehabi_B4) | services + service details | image | PT Power-lifting image |
+
+| [iStockphoto](https://www.istockphoto.com/photo/fast-hurdles-and-team-of-women-on-track-running-in-race-marathon-or-competition-in-gm1731418452-541785099?searchscope=image%2Cfilm) | services + service details | image | PT Athletics image |
+
+| [StockAdobe](https://stock.adobe.com/images/no-image-vector-illustration-isolated/284645131) | services + service details | image | No image placeholder |
+
+| [Bodybuilding](https://www.bodybuilding.com/content/the-14-best-biceps-exercises-for-men.html) | services + service details | image | PT Bodybuilding image |
+
+| [Canva](https://www.canva.com/p/templates/EAF6H5jJzeA-orange-and-yellow-bold-minimal-fitness-log-planner/) | services + service details | image | Workout plan image |
+
+| [Fontawesome](https://fontawesome.com/) | entire site | icons | Icons for profile, cart, search, category tag etc.. |
+
+### Acknowledgements
+
+- I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
+
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
+
+- I would like to thank my wife Maria for believing in me, and allowing me to make this transition into software development.
