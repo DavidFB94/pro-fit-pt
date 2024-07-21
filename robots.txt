@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: /accounts/
-Disallow: /cart/
+Disallow:
 Sitemap: https://pro-fit-pt-dcb56d3b7224.herokuapp.com/sitemap.xml
