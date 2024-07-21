@@ -205,9 +205,9 @@ FAQs
 
 - Toast messages are displayed on user action. Message: Success, Error and Info. Provides instant feedback to the user.
 
-![screenshot](documentation/features/feature-08-1.png)
-![screenshot](documentation/features/feature-08-2.png)
-![screenshot](documentation/features/feature-08-3.png)
+![screenshot](documentation/features/feature-08.1.png)
+![screenshot](documentation/features/feature-08.2.png)
+![screenshot](documentation/features/feature-08.3.png)
 
 **#9 Landing page**
 
@@ -243,20 +243,32 @@ FAQs
 
 ![screenshot](documentation/features/feature-13.png)
 
-**#14 Shopping Cart**
+**#14 Add service (ADMIN ONLY)**
+
+- Add service form to add a new service to the database. Uses checkboxes for adding pricingtiers. Image field where an image can be added. Cancel button with redirect to all services. Add button so submit the form.
+
+![screenshot](documentation/features/feature-22.png)
+
+**#15 Edit service (ADMIN ONLY)**
+
+- Edit service form to edit a  service in the database. Pre-fills fields with current information (not pricingtier or current image). Checkbox for deleting current image, or a new image can be added by selecting a new file which will override the current one. Cancel button with redirect to all services. Update button so submit the form.
+
+![screenshot](documentation/features/feature-23.png)
+
+**#16 Shopping Cart**
 
 - Displays items in the cart with service info and grand total. Includes links to keep shopping, remove an item and checkout.
 
 ![screenshot](documentation/features/feature-14.1.png)
 ![screenshot](documentation/features/feature-14.2.png)
 
-**#15 Checkout**
+**#17 Checkout**
 
 - Checkout form with order summery. Includes option to save customer information to their profile (if registered user), card payments with Stripe, link back to current cart, total charge amount, and complete order button.
 
 ![screenshot](documentation/features/feature-15.png)
 
-**#16 User registration**
+**#18 User registration**
 
 - Sign Up form for user registration. Includes links to home page, and sign up button for completing the form. User verification
 by email.
@@ -266,31 +278,31 @@ by email.
 ![screenshot](documentation/features/feature-16.3.png)
 ![screenshot](documentation/features/feature-16.4.png)
 
-**#17 User Sign in**
+**#19 User Sign in**
 
 - Sign in form for user login. Includes links to home page, and confirmation button for signing in. 
 
 ![screenshot](documentation/features/feature-17.png)
 
-**#18 User Log out**
+**#20 User Log out**
 
 - Log out screen with log out confirmation. 
 
 ![screenshot](documentation/features/feature-18.png)
 
-**#19 User Profile**
+**#21 User Profile**
 
 - Default User Information form and order history. Includes option to save/update customer information to their profile (if registered user), which will be used in the next checkout. Order history includes links to the order summary on previous orders.
 
 ![screenshot](documentation/features/feature-19.png)
 
-**#20 About/FAQs page**
+**#22 About/FAQs page**
 
 - About us section with site description, links to partners, facebook and privacy statement. FAQs section with accordion to save screen space (FAQs can be added/edited/removed in admin dashboard).
 
 ![screenshot](documentation/features/feature-20.png)
 
-**21 Contact page**
+**23 Contact page**
 
 - Includes contact form to send a message to the admin (can be read in the contacs tab in the dashboard) and a section for phone contact and phone-line operating hours. 
 
@@ -298,17 +310,9 @@ by email.
 
 ### Future Features
 
- **#1 Newsletter signup**
+ **#1 Front end pricing tier creation**
 
-- Newsletter signup form, to add the email address to the database for newsletter emails.
-
- **#2 Sending mass emails**
-
-- Sending emails to all users that has signed up for the newsletter.
-
- **#3 Front end pricing tier creation**
-
-- Allowing for new pricing tiers to be created in the front end for admins
+- Allowing for new pricing tiers to be created in the front end for admins.
 
 ## Tools & Technologies Used
 
