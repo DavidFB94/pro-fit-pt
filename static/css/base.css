@@ -116,6 +116,13 @@ body {
     border-width: 2px !important;
 }
 
+.border-solid-soft {
+    border-color: rgba(76, 76, 76, 0.3) !important;
+    border-style: solid !important;
+    border-radius: 0px !important;
+    border-width: 2px !important;
+}
+
 .bg-dark {
     background-color: #4C4C4C !important;
 }
