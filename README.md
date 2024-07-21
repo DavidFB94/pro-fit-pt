@@ -313,7 +313,8 @@ by email.
 
 - Includes links to navigation in burger dropdown menu. Adds maneuverability to the site for mobile users. Saves screen space.
 
-![screenshot](documentation/features/feature-24.png)
+![screenshot](documentation/features/feature-24.1.png)
+![screenshot](documentation/features/feature-24.2.png)
 
 ### Future Features
 
