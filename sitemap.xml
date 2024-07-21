@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/services/?page=1&amp;sort=name&amp;direction=asc</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/services/?category=Personal%20Training</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/services/?category=Counseling</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/services/?category=Workout%20Plan</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/about/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/contact/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/cart/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/services/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/services/25/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/accounts/login/?next=/services/delete/25/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/services/17/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/accounts/login/?next=/services/delete/17/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/services/1/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/accounts/login/?next=/services/delete/1/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/services/18/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/accounts/login/?next=/services/delete/18/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/services/19/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/accounts/login/?next=/services/delete/19/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/services/?page=2&amp;sort=name&amp;direction=asc</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/services/26/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/accounts/login/?next=/services/delete/26/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/services/20/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/services/?category=Personalized%20workout%20plan</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://pro-fit-pt-dcb56d3b7224.herokuapp.com/accounts/login/?next=/services/delete/20/</loc>
+  <lastmod>2024-07-21T12:15:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
