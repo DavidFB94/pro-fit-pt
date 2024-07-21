@@ -477,3 +477,65 @@ For example, what items are on special offer, new items in stock,
 updates to business hours, notifications of events, and much more!
 
 For example, what items are on special offer, new items in stock, updates to business hours, notifications of events, and much more!
+
+## Search Engine Optimization (SEO) & Social Media Marketing
+
+### Keywords
+
+I've identified some appropriate keywords to align with my site, that should help users when searching online to find my page easily from a search engine.
+
+This included a series of the following keyword types
+
+![screenshot](documentation/keywords.png)
+
+I also played around with [Word Tracker](https://www.wordtracker.com) a bit to check the frequency of some of my site's primary keywords (only until the free trial expired).
+
+### Sitemap
+
+I've used [XML-Sitemaps](https://www.xml-sitemaps.com) to generate a sitemap.xml file.
+
+This was generated using my deployed site URL: https://pro-fit-pt-dcb56d3b7224.herokuapp.com
+
+After it finished crawling the entire site, it created a
+[sitemap.xml](sitemap.xml) which I've downloaded and included in the repository.
+
+### Robots
+
+I've created the [robots.txt](robots.txt) file at the root-level.
+
+Inside, I've included the default settings:
+
+```
+
+User-agent: *
+
+Disallow:
+
+Sitemap: https://pro-fit-pt-dcb56d3b7224.herokuapp.com/sitemap.xml
+
+```
+
+
+Further links for future implementation:
+
+- [Google search console](https://search.google.com/search-console)
+
+- [Creating and submitting a sitemap](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap)
+
+- [Managing your sitemaps and using sitemaps reports](https://support.google.com/webmasters/answer/7451001)
+
+- [Testing the robots.txt file](https://support.google.com/webmasters/answer/6062598)
+
+### Social Media Marketing
+
+Creating a strong social base (with participation) and linking that to the business site can help drive sales.
+
+Using more popular providers with a wider user base, such as Facebook, typically maximizes site views.
+
+I've created a Facebook business account.
+
+![screenshot](documentation/facebook-image.png)
+
+### Newsletter Marketing
+
+I have incorporate a newsletter sign-up form on my application, to allow users to supply their email address if they are interested in learning more.
