@@ -4,6 +4,7 @@ from .forms import ContactForm
 
 # Create your views here.
 
+
 def contact(request):
     """
     Display the contact page and save contact form
@@ -20,7 +21,7 @@ def contact(request):
                             'Please ensure the form is valid.'))
     else:
         form = ContactForm()
-    
+
     template = 'contact/contact.html'
     context = {
         'form': form,

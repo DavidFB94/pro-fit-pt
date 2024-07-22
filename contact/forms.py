@@ -1,6 +1,7 @@
 from django import forms
 from .models import Contact
 
+
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
@@ -18,8 +19,9 @@ class ContactForm(forms.ModelForm):
             'message': 'Write your message here...',
         }
 
-
         for field in self.fields:
-            self.fields[field].widget.attrs['placeholder'] = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = (
+                placeholders[field]
+                 )
             self.fields[field].widget.attrs['class'] = ('border-color')
             self.fields[field].label = False
