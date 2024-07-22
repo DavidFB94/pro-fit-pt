@@ -24,7 +24,7 @@
             <div class="table-responsive rounded">
                 <table class="table table-sm table-borderless">
                     <thead class="my-3">
-                        <tr>
+                            <th class="col d-none d-md-block">Image</th>
                             <th scope="col">Service info</th>
                             <th scope="col"></th>
                             <th scope="col">Unit Price</th>
@@ -35,7 +35,7 @@
                     </thead>
                     {% for item in cart_items %}
                     <tr>
-                        <td class="p-3 w-25">
+                        <td class="p-3 w-100 d-none d-md-block bg-light-white">
                             {% if "placeholder" in item.service.image.url %}
                             <img class="card card-image rounded" src="{% static 'images/no-image.png' %}"
                                 alt="placeholder image">
