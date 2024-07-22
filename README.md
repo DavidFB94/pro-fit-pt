@@ -895,7 +895,7 @@ There are no significant differences between local vs deployed version.
 
 ### Content
 
-The core e-commerce functionalities and templates (services + checkout flow + payments) in this project was set up following Code Institutes walk-through. After the core functionalities were in place, adjustments were made to accommodate my design for the site.
+The core e-commerce functionalities and templates (services + checkout flow + alerts + payments) in this project was set up following Code Institutes walk-through. After the core functionalities were in place, adjustments were made to accommodate my design for the site.
 
 | Source | Location | Notes |
 
@@ -908,6 +908,8 @@ The core e-commerce functionalities and templates (services + checkout flow + pa
 | [Djangoproject](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.query.QuerySet.distinct) | views | Using distinct() for fetching unique service |
 
 | [Bootstrap5](https://getbootstrap.com/docs/5.3/layout/grid/) | Page layout | Using Bootstrap grid system |
+
+| [Bootstrap5](https://getbootstrap.com/docs/5.3/components/navbar/) | main-nav.html | navbar with dropdown |
 
 | [Bootstrap5](https://getbootstrap.com/docs/5.3/components/modal/) | services + service details | interactive pop-up (modal) for delete confirmation |
 
