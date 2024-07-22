@@ -5,6 +5,7 @@ from .forms import NewsletterForm
 
 # Create your views here.
 
+
 def about(request):
     """
     Display the about page with about us section,
@@ -20,7 +21,7 @@ def about(request):
             return redirect('about')
         else:
             messages.error(
-                request,'Failed to sign up. Please ensure the form is valid.')
+                request, 'Failed to sign up. Please ensure the form is valid.')
     else:
         form = NewsletterForm()
 

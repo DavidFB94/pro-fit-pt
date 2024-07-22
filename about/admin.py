@@ -2,6 +2,8 @@ from django.contrib import admin
 from .models import FAQs, Newsletter
 
 # Register your models here.
+
+
 class FAQsAdmin(admin.ModelAdmin):
     list_display = (
         'question',
@@ -10,7 +12,9 @@ class FAQsAdmin(admin.ModelAdmin):
 
     ordering = ('question',)
 
+
 admin.site.register(FAQs, FAQsAdmin)
+
 
 class NewsletterAdmin(admin.ModelAdmin):
     list_display = (
@@ -18,5 +22,6 @@ class NewsletterAdmin(admin.ModelAdmin):
     )
 
     ordering = ('email',)
+
 
 admin.site.register(Newsletter, NewsletterAdmin)
