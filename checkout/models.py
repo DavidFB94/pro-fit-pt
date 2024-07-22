@@ -60,12 +60,13 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False, blank=False,
-                              on_delete=models.CASCADE, related_name='lineitems')
-    service = models.ForeignKey(Service, null=False, blank=False,
-                                on_delete=models.CASCADE)
-    pricingtier = models.ForeignKey(PricingTier, null=True, blank=True,
-                                    on_delete=models.SET_NULL)
+    order = models.ForeignKey(
+         Order, null=False, blank=False,
+         on_delete=models.CASCADE, related_name='lineitems')
+    service = models.ForeignKey(
+        Service, null=False, blank=False, on_delete=models.CASCADE)
+    pricingtier = models.ForeignKey(
+        PricingTier, null=True, blank=True, on_delete=models.SET_NULL)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
                                          null=False, editable=False)
 
@@ -75,9 +76,14 @@ class OrderLineItem(models.Model):
         if it hasn't been set already.
         """
         if self.pricingtier:
-            self.lineitem_total = self.pricingtier.price_per_unit * self.pricingtier.quantity
+            self.lineitem_total = (
+                self.pricingtier.price_per_unit * self.pricingtier.quantity
+                )
         else:
-            self.lineitem_total = self.service.pricingtier.price_per_unit * self.service.pricingtier.quantity
+            self.lineitem_total = (
+                self.service.pricingtier.price_per_unit
+                * self.service.pricingtier.quantity
+                )
         super().save(*args, **kwargs)
 
     def __str__(self):
