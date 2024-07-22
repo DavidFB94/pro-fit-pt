@@ -140,6 +140,10 @@ body {
     background: whitesmoke !important
 }
 
+.bg-light-white {
+    background-color: white;
+}
+
 .remove-item:hover {
     cursor: pointer;
 }
@@ -183,9 +187,13 @@ body {
     }
 }
 
-@media (max-width: 765px) {
+@media (max-width: 768px) {
     /* Toast size for smaller screens */
     .custom-toast {
         max-width: 300px !important;
+    }
+
+    .text-small {
+        font-size: 0.75rem;
     }
 }

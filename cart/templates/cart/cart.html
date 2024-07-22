@@ -24,9 +24,9 @@
             <div class="table-responsive rounded">
                 <table class="table table-sm table-borderless">
                     <thead class="my-3">
+                        <tr class="text-small align-middle">
                             <th class="col d-none d-md-block">Image</th>
                             <th scope="col">Service info</th>
-                            <th scope="col"></th>
                             <th scope="col">Unit Price</th>
                             <th scope="col">Package</th>
                             <th scope="col">Subtotal</th>
@@ -34,7 +34,7 @@
                         </tr>
                     </thead>
                     {% for item in cart_items %}
-                    <tr>
+                    <tr class="text-small">
                         <td class="p-3 w-100 d-none d-md-block bg-light-white">
                             {% if "placeholder" in item.service.image.url %}
                             <img class="card card-image rounded" src="{% static 'images/no-image.png' %}"
@@ -56,8 +56,8 @@
                         <td class="py-3">
                             <p class="my-0">${{ item.price_per_unit|calc_subtotal:item.quantity }}</p>
                         </td>
-                        <td>
-                            <form action="" method="POST" class="update-form">
+                        <td class="py-3">
+                            <form action="" method="POST" class="update-form my-0">
                                 {% csrf_token %}
                                 <a class="remove-item text-danger hover" id="remove_{{ item.composite_key }}">
                                     <small>Remove</small>
