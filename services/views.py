@@ -56,8 +56,8 @@ def all_services(request):
 
         if 'category' in request.GET:
             category_names = request.GET['category'].split(',')
-            categories = Category.objects.filter(name__in=category_names)
-            services = services.filter(category__name__in=category_names)
+            services = services.filter(category__friendly_name__in=category_names)
+            categories = Category.objects.filter(friendly_name__in=category_names)
         
         if 'q' in request.GET:
             query = request.GET['q']

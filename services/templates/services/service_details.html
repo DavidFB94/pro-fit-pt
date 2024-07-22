@@ -32,7 +32,7 @@
                     <p class="mb-0">
                         <small>
                             <i class="fa-solid fa-tags"></i>
-                            <a class="text-decoration-none" href="{% url 'services' %}?category={{ service.category.name }}">
+                            <a class="text-decoration-none" href="{% url 'services' %}?category={{ service.category.friendly_name }}">
                                 {{ service.category.name }}
                             </a>
                         </small>
