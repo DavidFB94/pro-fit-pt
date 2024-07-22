@@ -74,17 +74,17 @@
     {% endif %}
 {% endblock content %}
 {% block extra_body %}
-    <script>
-(function() {
-  var message = "{% trans 'Do you really want to remove the selected email address?' %}";
-  var actions = document.getElementsByName('action_remove');
-  if (actions.length) {
-    actions[0].addEventListener("click", function(e) {
-      if (! confirm(message)) {
-        e.preventDefault();
-      }
-    });
-  }
-})();
-    </script>
+<script>
+    (function() {
+    var message = "{% trans 'Do you really want to remove the selected email address?' %}";
+    var actions = document.getElementsByName('action_remove');
+    if (actions.length) {
+        actions[0].addEventListener("click", function(e) {
+        if (! confirm(message)) {
+            e.preventDefault();
+        }
+        });
+    }
+    })();
+</script>
 {% endblock extra_body %}
