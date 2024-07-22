@@ -65,7 +65,7 @@ def all_services(request):
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('services'))
             
-            queries = Q(name__icontains=query) | Q(description__icontains(query))
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
             services = services.filter(queries)
 
     # apply distinct after filtering/sorting to get unique services only
