@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
-
 from services.models import Service, PricingTier
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404
+    )
 
 # Create your views here.
+
 
 def view_cart(request):
     """
@@ -25,7 +27,6 @@ def add_to_cart(request, item_id):
     if not service_quantity:
         messages.error(request, 'Please select a valid quantity.')
         return redirect(redirect_url)
-    
     try:
         pricing_tier_id = int(service_quantity)
     except (ValueError, TypeError):
@@ -39,7 +40,10 @@ def add_to_cart(request, item_id):
 
     if composite_key in cart:
         cart[composite_key]['quantity'] += pricing_tier.quantity
-        messages.success(request, f'Added {pricing_tier.quantity}x more {service.name} for ${pricing_tier.price_per_unit}/each to your cart')
+        messages.success(
+            request,
+            f'Added {pricing_tier.quantity}x more {service.name} '
+            f'for ${pricing_tier.price_per_unit}/each to your cart')
     else:
         cart[composite_key] = {
             'quantity': pricing_tier.quantity,
@@ -49,8 +53,11 @@ def add_to_cart(request, item_id):
             'pricing_tier_quantity': pricing_tier.quantity,
             'price_per_unit': float(pricing_tier.price_per_unit)
         }
-        messages.success(request, f'Added {pricing_tier.quantity}x {service.name} for ${pricing_tier.price_per_unit}/each to your cart')
-    
+        messages.success(
+            request,
+            f'Added {pricing_tier.quantity}x {service.name} '
+            f'for ${pricing_tier.price_per_unit}/each to your cart')
+
     request.session['cart'] = cart
     return redirect(redirect_url)
 
@@ -68,7 +75,7 @@ def remove_from_cart(request, composite_key):
             messages.success(request, f'Removed {service_name} from your cart')
         else:
             messages.error(request, 'Item not found in cart')
-        
+
         request.session['cart'] = cart
         return HttpResponse(status=200)
     except Exception as e:
