@@ -35,6 +35,7 @@ body {
 
 .service-name {
     font-size: large !important;
+    margin-bottom: 0px !important;
 }
 
 /* Card styles */
@@ -171,13 +172,20 @@ body {
 
 /* ------- Media Queries ------- */
 
-/* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
+    /* fixed top navbar only on medium and up */
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
         z-index: 1030;
+    }
+}
+
+@media (max-width: 765px) {
+    /* Toast size for smaller screens */
+    .custom-toast {
+        max-width: 300px !important;
     }
 }
