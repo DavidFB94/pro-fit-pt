@@ -1,3 +1,4 @@
+/* jshint esversion: 11, jquery: true */
 // Sort services
 document.getElementById('sort-selector').addEventListener('change', function() {
     const selectedValue = this.value;

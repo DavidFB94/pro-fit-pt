@@ -1,3 +1,4 @@
+/* jshint esversion: 11, jquery: true */
 // Calculate and update total price for services
 function calculateTotalPrice() {
     var select = document.getElementById("id_service_quantity");
