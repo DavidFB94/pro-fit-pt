@@ -9,7 +9,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Categories'
-    
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254)
 
@@ -18,7 +18,9 @@ class Category(models.Model):
 
 
 class Service(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'Category', null=True, blank=True, on_delete=models.SET_NULL
+        )
     name = models.CharField(max_length=254)
     description = models.TextField()
     image = cloudinary.models.CloudinaryField('image', default='placeholder')
@@ -28,9 +30,14 @@ class Service(models.Model):
 
 
 class PricingTier(models.Model):
-    services = models.ManyToManyField(Service, related_name='pricing_tiers', blank=True)
+    services = models.ManyToManyField(
+        Service, related_name='pricing_tiers', blank=True
+        )
     quantity = models.PositiveIntegerField(null=True, blank=True)
     price_per_unit = models.DecimalField(max_digits=8, decimal_places=2)
 
     def __str__(self):
-        return f"Package {self.quantity} - {self.price_per_unit}$/unit - total: {self.price_per_unit*self.quantity}$"
+        return (
+            f'Package {self.quantity} - {self.price_per_unit}$/unit '
+            f'- total: {self.price_per_unit * self.quantity}$'
+        )

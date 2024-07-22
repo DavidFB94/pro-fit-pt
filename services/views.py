@@ -11,7 +11,8 @@ import cloudinary.uploader
 
 
 def all_services(request):
-    """ A view to show all services in a paginated list, including sorting and search queries """
+    """ A view to show all services in a paginated list,
+    including sorting and search queries """
 
     query = None
     categories = None
@@ -22,7 +23,6 @@ def all_services(request):
     highest_pricing_tier = PricingTier.objects.filter(
         services=OuterRef('pk')
     ).order_by('-price_per_unit').values('price_per_unit')[:1]
-    
     lowest_pricing_tier = PricingTier.objects.filter(
         services=OuterRef('pk')
     ).order_by('price_per_unit').values('price_per_unit')[:1]
@@ -41,10 +41,14 @@ def all_services(request):
             elif sortkey == 'pricingtier':
                 direction = request.GET.get('direction', 'asc')
                 if direction == 'asc':
-                    services = services.annotate(lowest_price=Subquery(lowest_pricing_tier))
+                    services = services.annotate(
+                        lowest_price=Subquery(lowest_pricing_tier)
+                            )
                     sortkey = 'lowest_price'
                 else:
-                    services = services.annotate(highest_price=Subquery(highest_pricing_tier))
+                    services = services.annotate(
+                        highest_price=Subquery(highest_pricing_tier)
+                            )
                     sortkey = 'highest_price'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
@@ -56,16 +60,25 @@ def all_services(request):
 
         if 'category' in request.GET:
             category_names = request.GET['category'].split(',')
-            services = services.filter(category__friendly_name__in=category_names)
-            categories = Category.objects.filter(friendly_name__in=category_names)
-        
+            services = services.filter(
+                category__friendly_name__in=category_names
+                )
+            categories = Category.objects.filter(
+                friendly_name__in=category_names
+                )
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request,
+                    "You didn't enter any search criteria!"
+                    )
                 return redirect(reverse('services'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = (
+                Q(name__icontains=query) | Q(description__icontains=query)
+                    )
             services = services.filter(queries)
 
     # apply distinct after filtering/sorting to get unique services only
@@ -127,7 +140,10 @@ def add_service(request):
             messages.success(request, 'Successfully added service!')
             return redirect(reverse('service_details', args=[service.id]))
         else:
-            messages.error(request, 'Failed to add service. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add service. Please ensure the form is valid.'
+                )
     else:
         form = ServiceForm()
 
@@ -166,7 +182,10 @@ def edit_service(request, service_id):
             messages.success(request, 'Successfully updated service!')
             return redirect(reverse('service_details', args=[service.id]))
         else:
-            messages.error(request, 'Failed to update service. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update service. Please ensure the form is valid.'
+                )
     else:
         form = ServiceForm(instance=service)
         messages.info(request, f'You are editing {service.name}')

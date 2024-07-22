@@ -11,7 +11,7 @@ class ServiceForm(forms.ModelForm):
 
     class Meta:
         model = Service
-        fields = ['name', 'category', 'description', 'pricing_tiers', 'image',]
+        fields = ['name', 'category', 'description', 'pricing_tiers', 'image']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -25,7 +25,11 @@ class ServiceForm(forms.ModelForm):
         self.fields['image'].required = False
         self.fields['image'].label = 'Image'
 
-        self.fields['pricing_tiers'].queryset = PricingTier.objects.all().order_by('quantity')
+        self.fields['pricing_tiers'].queryset = (
+            PricingTier.objects.all().order_by('quantity')
+            )
 
         if self.instance and self.instance.pk and self.instance.image:
-            self.fields['delete_image'] = forms.BooleanField(required=False, label='Delete image') 
+            self.fields['delete_image'] = (
+                forms.BooleanField(required=False, label='Delete image')
+                )

@@ -3,6 +3,8 @@ from django.utils.safestring import mark_safe
 from .models import Service, Category, PricingTier
 
 # Register your models here.
+
+
 class ServiceAdmin(admin.ModelAdmin):
     list_display = (
         'name',
