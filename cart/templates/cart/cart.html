@@ -57,7 +57,7 @@
                             <p class="my-0">${{ item.price_per_unit|calc_subtotal:item.quantity }}</p>
                         </td>
                         <td class="py-3">
-                            <form action="" method="POST" class="update-form my-0">
+                            <form action="{% url 'about' %}" method="POST" class="update-form my-0">
                                 {% csrf_token %}
                                 <a class="remove-item text-danger hover" id="remove_{{ item.composite_key }}">
                                     <small>Remove</small>
@@ -68,22 +68,23 @@
                     {% endfor %}
                 </table>
                 <div class="d-flex flex-column h-100 align-items-end mb-2">
-                <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
-                <div class="mt-auto text-end">
-                    <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Keep Shopping</span>
-                    </a>
-                    <a href="{% url 'checkout' %}" class="btn btn-color rounded-0 btn-lg">
-                        <span class="text-uppercase">Secure Checkout</span>
-                        <span class="icon">
-                            <i class="fas fa-lock"></i>
-                        </span>
-                    </a>
+                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                    <div class="mt-auto text-end">
+                        <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Keep Shopping</span>
+                        </a>
+                        <a href="{% url 'checkout' %}" class="btn btn-color rounded-0 btn-lg">
+                            <span class="text-uppercase">Secure Checkout</span>
+                            <span class="icon">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </a>
+                    </div>
                 </div>
-            </div>
+            </div>    
             {% else %}
             <p class="lead my-5">Your cart is empty</p>
             <a href="{% url 'services' %}" class="btn border btn-lg">
@@ -100,18 +101,18 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script>
-    // Remove item and reload on click
-    $('.remove-item').click(function (e) {
-        let csrfToken = "{{ csrf_token }}";
-        let compositeKey = $(this).attr('id').split('remove_')[1];
-        let url = `/cart/remove/${compositeKey}/`;
-        let data = { 'csrfmiddlewaretoken': csrfToken };
+    <script>
+        // Remove item and reload on click
+        $('.remove-item').click(function (e) {
+            let csrfToken = "{{ csrf_token }}";
+            let compositeKey = $(this).attr('id').split('remove_')[1];
+            let url = `/cart/remove/${compositeKey}/`;
+            let data = { 'csrfmiddlewaretoken': csrfToken };
 
-        $.post(url, data)
-            .done(function () {
-                location.reload();
-            });
-    });
-</script>
+            $.post(url, data)
+                .done(function () {
+                    location.reload();
+                });
+        });
+    </script>
 {% endblock %}
