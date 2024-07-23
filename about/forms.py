@@ -1,6 +1,7 @@
 from django import forms
 from .models import Newsletter
 
+
 class NewsletterForm(forms.ModelForm):
     class Meta:
         model = Newsletter
@@ -13,5 +14,7 @@ class NewsletterForm(forms.ModelForm):
         }
 
         for field in self.fields:
-            self.fields[field].widget.attrs['placeholder'] = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = (
+                placeholders[field]
+                 )
             self.fields['email'].label = ''
