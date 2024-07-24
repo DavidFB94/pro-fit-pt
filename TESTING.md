@@ -184,3 +184,30 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Feature is expected to allow an admin to access all users, and allow for adding/viewing/editing/deleting user data | Tested the feature by adding a user, editing their information, and then deleting the user | The feature behaved as expected, and it displayed the custom 404-page | Test concluded and passed | ![screenshot](documentation/features/feature-25.png) |
 | | Feature is expected to allow an admin to read customer messages and mark them as read/unread | Tested the feature by navigating to the contact section in the admin dashboard, and click a customers message in the "Customer messages" page. Once message was opened, I checked the "saved" box, and clicked save.  | The feature behaved as expected. All messages send with the contact form are displayed in the "Customer messages" page. A message can be opened, and the "Read" checkbox can be toggled. When returning to the page, the "Read" checkbox is now toggled on. | Test concluded and passed | ![screenshot](documentation/features/feature-26.png) |
 | | Feature is expected to allow an admin to access the FAQ page, where FAQs can be added/edited/deleted | Tested the feature by adding a FAQ. Navigated to the about page. The process was repeated for edit/delete | The feature behaved as expected. The added FAQ was displayed in the about page, with the other FAQs in the accordion. The FAQ could be edited, and also deleted | Test concluded and passed | ![screenshot](documentation/features/feature-27.png) |
+
+## User Story Testing
+
+| User Story | Screenshot |
+| --- | --- |
+| As a customer I can register an account so that I can log in, and use the site in an authorized and secure way. | ![screenshot](documentation/features/feature-16.1.png) |
+| As a customer I can receive a email confirmation after account registration so that I know that my registration was successful. | ![screenshot](documentation/features/feature-16.2.png) |
+| As a customer I can log in with my account information so that I can fully use the sites features. | ![screenshot](documentation/features/feature-17.png) |
+| As a customer I can log out from my account so that I can avoid unauthorized access to my data. | ![screenshot](documentation/features/feature-18.png) |
+| As a customer I can view services so that I can see the sites supply. | ![screenshot](documentation/features/feature-10.1.png) |
+| As a customer I can view service details so that I can see detailed service information and make informed purchasing decisions. | ![screenshot](documentation/features/feature-13.png) |
+| As a customer I can search for a service by name or description so that I can find a specific service I'd like to purchase.| ![screenshot](documentation/features/feature-04.png)
+| As a customer I can sort the list of services so that I can easily identify the service I might be interested in.| ![screenshot](documentation/features/feature-10.1.png)![screenshot](documentation/features/feature-02.png)
+| As a customer I can add services to my shopping cart, view the contents of my cart and proceed to checkout, so that I can complete my purchase quickly and easily.| ![screenshot](documentation/features/feature-13.png)![screenshot](documentation/features/feature-14.2.png)![screenshot](documentation/features/feature-06.3.png)
+| As a customer I can proceed to checkout/payment so that I can pay for my services and enter my delivery information.| ![screenshot](documentation/features/feature-15.png)
+| As a customer I can receive a purchase confirmation e-mail so that I know that my order was successful.| ![screenshot](documentation/browsers/chrome-checkout_success.png)
+| As a registered customer I can access my profile so that I can add/review information about my account.| ![screenshot](documentation/features/feature-19.png)
+| As a customer I can save my information so that I can have a faster checkout process when coming back to the site.| ![screenshot](documentation/features/feature-19.png)![screenshot](documentation/features/feature-15.png)
+| As a customer I can view my order history so that I can track my purchases.| ![screenshot](documentation/features/feature-19.png)
+| As a customer I can fill out a contact form so that I can send messages to the site admin.| ![screenshot](documentation/features/feature-21.png)
+| As a customer I can find a FAQ section so that I can easily find answers to common questions regarding the site.| ![screenshot](documentation/features/feature-20.png)
+| As a customer I can sign up for a newsletter so that I can receive the latest news and deals. | ![screenshot](documentation/features/feature-20.png) |
+| As a site admin I can moderate users and their data in the admin dashboard so that I can make changes when required. | ![screenshot](documentation/features/feature-25.png) |
+| As a site admin I can receive a contact form so that I can have direct contact with the customers. | ![screenshot](documentation/features/feature-26.png) |
+| s a site admin I can mark contact messages as "read" so that I can keep track on which messages I have reviewed. | ![screenshot](documentation/features/feature-26.png) |
+| As a site admin I can add/edit/delete FAQs so that I can make the site easier to use for the customer. | ![screenshot](documentation/features/feature-27.png) |
+| As a site admin I can add/edit/delete services so that I can manage my service inventory. | ![screenshot](documentation/browsers/chrome-add_service.png)![screenshot](documentation/browsers/chrome-edit_service.png)![screenshot](documentation/features/feature-11.1.png)![screenshot](documentation/features/feature-11.3.png) |
