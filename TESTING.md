@@ -123,17 +123,17 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 ## Lighthouse Audit
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
-| Page | Mobile | Desktop | Notes |
-| --- | --- | --- | --- |
-| About | ![screenshot](documentation/lighthouse/desktop-lighthouse-about.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-about.png) | |
-| Cart | ![screenshot](documentation/lighthouse/desktop-lighthouse-about.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-about.png) | |
-| Checkout | ![screenshot](documentation/lighthouse/desktop-lighthouse-about.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-about.png) | |
-| Checkout_success | ![screenshot](documentation/lighthouse/desktop-lighthouse-about.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-about.png) | |
-| Contact | ![screenshot](documentation/lighthouse/desktop-lighthouse-contact.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-contact.png) | |
-| Index | ![screenshot](documentation/lighthouse/desktop-lighthouse-index.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-index.png) | |
-| Profile | ![screenshot](documentation/lighthouse/desktop-lighthouse-profile.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-profile.png) | |
-| Add_service | ![screenshot](documentation/lighthouse/desktop-lighthouse-add_service.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-add_service.png) | |
-| Edit_service | ![screenshot](documentation/lighthouse/desktop-lighthouse-edit_service.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-edit_service.png) | |
-| Service_details | ![screenshot](documentation/lighthouse/desktop-lighthouse-service_details.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-service_details.png) | |
-| Services | ![screenshot](documentation/lighthouse/desktop-lighthouse-services.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-services.png) | |
-| 404 | ![screenshot](documentation/lighthouse/desktop-lighthouse-404.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-404.png) | |
+| Page | Mobile | Desktop |
+| --- | --- | --- |
+| About | ![screenshot](documentation/lighthouse/desktop-lighthouse-about.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-about.png) |
+| Cart | ![screenshot](documentation/lighthouse/desktop-lighthouse-about.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-about.png) |
+| Checkout | ![screenshot](documentation/lighthouse/desktop-lighthouse-about.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-about.png) |
+| Checkout_success | ![screenshot](documentation/lighthouse/desktop-lighthouse-about.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-about.png) |
+| Contact | ![screenshot](documentation/lighthouse/desktop-lighthouse-contact.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-contact.png) |
+| Index | ![screenshot](documentation/lighthouse/desktop-lighthouse-index.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-index.png) |
+| Profile | ![screenshot](documentation/lighthouse/desktop-lighthouse-profile.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-profile.png) |
+| Add_service | ![screenshot](documentation/lighthouse/desktop-lighthouse-add_service.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-add_service.png) |
+| Edit_service | ![screenshot](documentation/lighthouse/desktop-lighthouse-edit_service.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-edit_service.png) |
+| Service_details | ![screenshot](documentation/lighthouse/desktop-lighthouse-service_details.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-service_details.png) |
+| Services | ![screenshot](documentation/lighthouse/desktop-lighthouse-services.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-services.png) |
+| 404 | ![screenshot](documentation/lighthouse/desktop-lighthouse-404.png) | ![screenshot](documentation/lighthouse/mobile-lighthouse-404.png) |
