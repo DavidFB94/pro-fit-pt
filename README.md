@@ -920,6 +920,7 @@ The core e-commerce functionalities and templates (services + checkout flow + al
 | [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
 
 | [Cloudinary](https://cloudinary.com/documentation/django_image_and_video_upload#django_forms_and_models_workflow) | services + service details | how to use cloudinary field | 
+| [ChatGPT](https://chatgpt.com) | entire site | to help me troubleshoot a few bugs I had, as well as explain some coding concepts used from the walkthrough lesson |
 
 ### Media
 
