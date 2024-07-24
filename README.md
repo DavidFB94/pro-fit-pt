@@ -397,11 +397,11 @@ by email.
 
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, code suggestions and explain things.
 
-- [[Miro]](https://miro.com/) used to build initial ERD.
+- [![Miro](https://img.shields.io/badge/Miro-grey?logo=miro&logoColor=050038)](https://miro.com) used to build initial ERD.
 
-- [[TinyPNG]](https://tinypng.com/) image compression.
+- [![TinyPNG](https://img.shields.io/badge/TinyPNG-grey?logo=foodpanda&logoColor=44A833)](https://tinypng.com) image compression.
 
-- [[Pixelied]](https://pixelied.com/convert/jpg-converter/jpg-to-webp) image format converter.
+- [![Pixelied](https://img.shields.io/badge/Pixelied-grey?logo=picartodottv&logoColor=5F58B7)](https://pixelied.com/convert/jpg-converter/jpg-to-webp) image format converter.
 
 ## Database Design
 
