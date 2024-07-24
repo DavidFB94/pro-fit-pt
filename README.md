@@ -316,6 +316,12 @@ by email.
 ![screenshot](documentation/features/feature-24.1.png)
 ![screenshot](documentation/features/feature-24.2.png)
 
+**#25 404-page**
+
+- Error page when a non-existing service is try to be accessed. Includes a link back to services. Adds maneuverability to the site.
+
+![screenshot](documentation/browsers/chrome-404.png)
+
 ### Future Features
 
  **#1 Front end pricing tier creation**
