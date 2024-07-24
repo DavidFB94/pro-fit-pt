@@ -578,7 +578,6 @@ I have incorporate a newsletter sign-up form on my application, to allow users t
 ## Testing
 
 > [!NOTE]
-
 > For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
 ## Deployment
@@ -596,15 +595,10 @@ To obtain my own Postgres Database from Code Institute, I followed these steps:
 - An email was sent to me with my new Postgres Database.
 
 > [!CAUTION]
-
 >  - PostgreSQL databases by Code Institute are only available to CI Students.
-
 >  - You must acquire your own PostgreSQL database through some other method
-
 > if you plan to clone/fork this repository.
-
 >  - Code Institute students are allowed a maximum of 8 databases.
-
 >  - Databases are subject to deletion after 18 months.
 
 ### WhiteNoise
@@ -734,30 +728,19 @@ Deployment steps are as follows, after account setup:
 - From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables.
 
 > [!IMPORTANT]
-
 > This is a sample only; you would replace the values with your own if cloning/forking my repository.
   
 
 | Key | Value |
-
 | --- | --- |
-
 | `CLOUDINARY_URL` | user's own value |
-
 | `DATABASE_URL` | user's own value |
-
 | `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
-
 | `EMAIL_HOST_PASS` | user's own value |
-
 | `EMAIL_HOST_USER` | user's own value |
-
 | `SECRET_KEY` | user's own value |
-
 | `STRIPE_PUBLIC_KEY` | user's own value |
-
 | `STRIPE_SECRET_KEY` | user's own value |
-
 | `STRIPE_WH_SECRET` | user's own value |
 
 Heroku needs three additional files in order to deploy properly.
@@ -823,7 +806,6 @@ You will need to create a new file called `env.py` at the root-level,
 and include the same environment variables listed above from the Heroku deployment steps.
 
 > [!IMPORTANT]
-
 > This is a sample only; you would replace the values with your own if cloning/forking my repository.
 
 Sample `env.py` file:
