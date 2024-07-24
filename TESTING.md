@@ -211,3 +211,89 @@ Defensive programming was manually tested with the below user acceptance testing
 | s a site admin I can mark contact messages as "read" so that I can keep track on which messages I have reviewed. | ![screenshot](documentation/features/feature-26.png) |
 | As a site admin I can add/edit/delete FAQs so that I can make the site easier to use for the customer. | ![screenshot](documentation/features/feature-27.png) |
 | As a site admin I can add/edit/delete services so that I can manage my service inventory. | ![screenshot](documentation/browsers/chrome-add_service.png)![screenshot](documentation/browsers/chrome-edit_service.png)![screenshot](documentation/features/feature-11.1.png)![screenshot](documentation/features/feature-11.3.png) |
+
+## Bugs
+
+#### #01
+- Front end login is blocked by e-mail verification
+
+    - Fixed after adding front end verification
+
+#### #02
+- Not all services are displayed, and there are duplicates of services with multiple pricing tiers.
+
+    ![screenshot](documentation/bugs/bug01.1.png)
+    ![screenshot](documentation/bugs/bug01.2.png)
+    ![screenshot](documentation/bugs/bug01.3.png)
+
+    - Fixed by adjusting all_services view to only display once. Fixed by using .distinct() and change ordering to name instead of pricingtier.
+
+#### #03
+- Pagination not scaling down properly.
+
+    ![screenshot](documentation/bugs/bug02.png)
+
+    - Fixed by removed pagination arrows. They could not be styled easily, and there are already text buttons for next/previous.
+
+#### #04
+- When sorting using the "sort by" dropdown in the services list, it shows duplicates of the services
+
+    ![screenshot](documentation/bugs/bug03.png)
+
+    - Fixed by overhauling the service view. Duplicates were appearing because all pricing-tiers were being listed, but only the highest price was the price shown in the cards. Had to import/use Subquery and OuterRef to create more distinct filtering. sorting and splitting. JS had to be used as well.
+
+#### #05
+- The payment form doesn't get accepted on submission. When clicking Complete order, the button gets disabled, but nothing happens.
+
+    ![screenshot](documentation/bugs/bug04.png)
+
+    - Fixed by identifying that I had a hidden input line inside the form:  `<input type="hidden" value="{{ client_secret }}" name="client_secret">`  
+It was causing problems, since I did not have the client_secret set up yet. I had also copied the {{ stripe_public_key|json_script:"id_stripe_public_key"}} twice at the bottom of the file. I was missing {{ client_secret|json_script:"id_client_secret"}}.
+Fix was to remove the field, and correct the json_scripts at the bottom of the page
+
+#### #06
+- TypeError when trying to add an item to the cart without selecting a quantity:
+
+    ![screenshot](documentation/bugs/bug05.1.png)
+    ![screenshot](documentation/bugs/bug05.2.png)
+    ![screenshot](documentation/bugs/bug05.3.png)
+
+    -  Fixed by creating add service_quantity check in view.
+
+#### #07
+- Inconsistent sorting for price (low-high) in services
+
+    ![screenshot](documentation/bugs/bug06.1.png)
+    ![screenshot](documentation/bugs/bug06.2.png)
+
+    - Could not find fix, see unfixed bugs.
+
+
+### GitHub **Issues**
+
+**Fixed Bugs**
+
+[![GitHub issue custom search](https://img.shields.io/github/issues-search?query=repo%3ADavidFB94%2Fpro-fit-pt%20label%3Abug&label=bugs)](https://github.com/DavidFB94/pro-fit-pt/issues?q=is%3Aissue+is%3Aclosed+label%3Abug)
+
+All previously closed/fixed bugs can be tracked [here](https://github.com/DavidFB94/pro-fit-pt/issues?q=is%3Aissue+is%3Aclosed).
+
+| Bug | Status |
+| --- | --- |
+| [Signup verification has do be done through terminal, e-mail functionality not yet implemented](https://github.com/DavidFB94/pro-fit-pt/issues/3#issuecomment-2198532090) | Closed |
+| [Services duplication/missing services](https://github.com/DavidFB94/pro-fit-pt/issues/5#issuecomment-2196335174) | Closed |
+ [Pagination navigation not scaling down on mobile](https://github.com/DavidFB94/pro-fit-pt/issues/5#issuecomment-2196598078) | Closed |
+| [Duplication when sorting](https://github.com/DavidFB94/pro-fit-pt/issues/27#issuecomment-2200097882) | Closed |
+| [Checkout form not submitting](https://github.com/DavidFB94/pro-fit-pt/issues/7#issuecomment-2220538951) | Closed |
+| [Python TypeError when adding service to cart without selecting quantity](https://github.com/DavidFB94/pro-fit-pt/issues/6#issuecomment-2222529228) | Closed |
+
+**Open Issues**
+
+[![GitHub issues](https://img.shields.io/github/issues/DavidFB94/pro-fit-pt)](https://github.com/DavidFB94/pro-fit-pt/issues)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/DavidFB94/pro-fit-pt)](https://github.com/DavidFB94/pro-fit-pt/issues?q=is%3Aissue+is%3Aclosed)
+
+Any remaining open issues can be tracked [here](https://github.com/DavidFB94/pro-fit-pt/issues).
+
+| Bug | Status |
+| --- | --- |
+| [Inconsistent price sorting](https://github.com/DavidFB94/pro-fit-pt/issues/27#issuecomment-2247920061) | Open |
+
