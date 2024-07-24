@@ -94,8 +94,6 @@ I used [coolors.co](https://coolors.co/ffffff-f5f5f5-4c4c4c) to generate my colo
 
 - As a site admin I can add/edit/delete services so that I can manage my service inventory.
 
-- (Future Feature) As a site admin I can send mass emails to users, if they have signed up for it, so that I can increase traffic and sales on the site.
-
 ## Wireframes
 Wireframes were developed for mobile and desktop sizes.
 
