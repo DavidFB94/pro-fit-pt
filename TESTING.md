@@ -297,3 +297,11 @@ Any remaining open issues can be tracked [here](https://github.com/DavidFB94/pro
 | --- | --- |
 | [Inconsistent price sorting](https://github.com/DavidFB94/pro-fit-pt/issues/27#issuecomment-2247920061) | Open |
 
+## Unfixed Bugs
+
+ - Inconsistent sorting for low to high in services
+
+    ![screenshot](documentation/bugs/bug06.1.png)
+    ![screenshot](documentation/bugs/bug06.2.png)
+
+    - Attempted fix: I tried to adjust the all_services view, but could not isolate the issue
