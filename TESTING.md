@@ -43,12 +43,12 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| base | base.html | ![screenshot](documentation/validation/js-in-base.html.png) | |
-| cart | cart.html | ![screenshot](documentation/validation/js-remove-item-in-cart.html.png) | |
-| checkout | stripe_elements.js | ![screenshot](documentation/validation/stripe_elements.js.png) | |
-| profiles | countryfield.js | ![screenshot](documentation/validation/countryfield.js.png) | |
-| services | sort_services.js | ![screenshot](documentation/validation/sort_services.js.png) | |
-| services | total_price.js | ![screenshot](documentation/validation/total_price.js.png) | |
+| base | base.html | ![screenshot](documentation/validation/js-in-base.html.png) | No errors |
+| cart | cart.html | ![screenshot](documentation/validation/js-remove-item-in-cart.html.png) | No errors |
+| checkout | stripe_elements.js | ![screenshot](documentation/validation/stripe_elements.js.png) | Var in env |
+| profiles | countryfield.js | ![screenshot](documentation/validation/countryfield.js.png) | No errors |
+| services | sort_services.js | ![screenshot](documentation/validation/sort_services.js.png) | No errors |
+| services | total_price.js | ![screenshot](documentation/validation/total_price.js.png) | Used in other file |
 
 ### Python
 
@@ -86,7 +86,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | home | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/pro-fit-pt/main/home/views.py) | ![screenshot](documentation/validation/home-views.py.png) | No errors |
 |  | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/pro-fit-pt/main/manage.py) | ![screenshot](documentation/validation/main-manage.py.png) | No errors |
 | pro_fit_pt | settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/pro-fit-pt/main/pro_fit_pt/settings.py) | ![screenshot](documentation/validation/main-settings.py.png) | No errors |
-| pro_fit_pt | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/pro-fit-pt/main/pro_fit_pt/urls.py) | ![screenshot](documentation/validation/main-urls.py.png)
+| pro_fit_pt | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/pro-fit-pt/main/pro_fit_pt/urls.py) | ![screenshot](documentation/validation/main-urls.py.png) | No errors |
 | pro_fit_pt | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/pro-fit-pt/main/pro_fit_pt/views.py) | ![screenshot](documentation/validation/main-views.py.png) | No errors |
 | profiles | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/pro-fit-pt/main/profiles/admin.py) | ![screenshot](documentation/validation/profiles-admin.py.png) | No errors |
 | profiles | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/pro-fit-pt/main/profiles/forms.py) | ![screenshot](documentation/validation/profiles-forms.py.png) | No errors |
