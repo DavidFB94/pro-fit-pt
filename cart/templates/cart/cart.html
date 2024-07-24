@@ -102,6 +102,7 @@
 {% block postloadjs %}
 {{ block.super }}
     <script>
+        /* jshint esversion: 11, jquery: true */
         // Remove item and reload on click
         $('.remove-item').click(function (e) {
             let csrfToken = "{{ csrf_token }}";
