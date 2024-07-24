@@ -80,7 +80,7 @@ I used [coolors.co](https://coolors.co/ffffff-f5f5f5-4c4c4c) to generate my colo
 
 - As a customer I can find a FAQ section so that I can easily find answers to common questions regarding the site.
 
-- (Future Feature) As a customer I can sign up for a newsletter so that I can receive the latest news and deals.
+- As a customer I can sign up for a newsletter so that I can receive the latest news and deals.
 
 ### Site Admin
 
