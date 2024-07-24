@@ -305,3 +305,6 @@ Any remaining open issues can be tracked [here](https://github.com/DavidFB94/pro
     ![screenshot](documentation/bugs/bug06.2.png)
 
     - Attempted fix: I tried to adjust the all_services view, but could not isolate the issue
+
+> [!NOTE]  
+> There are no remaining bugs that I am aware of.
