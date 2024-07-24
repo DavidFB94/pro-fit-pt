@@ -334,7 +334,6 @@ by email.
 
 - Admin dashboard contact management. To be able to read messages, and mark them as read.
 
-![screenshot](documentation/features/feature-25.png)
 ![screenshot](documentation/features/feature-26.png)
 
 **#28 Admin FAQ management**
