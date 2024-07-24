@@ -266,12 +266,17 @@ FAQs
 
 **#17 Checkout**
 
-- Checkout form with order summery. Includes option to save customer information to their profile (if registered user), card payments with Stripe, link back to current cart, total charge amount, and complete order button. Redirects to order summary screen, and a confirmation email is sent. 
+- Checkout form with order summery. Includes option to save customer information to their profile (if registered user), card payments with Stripe, link back to current cart, total charge amount, and complete order button. Redirects to checkout success page.
 
 ![screenshot](documentation/features/feature-15.png)
+
+**#18 Checkout success page**
+
+- Displays an order summary, and order e-mail confirmation 
+
 ![screenshot](documentation/features/feature-15.1.png)
 
-**#18 User registration**
+**#19 User registration**
 
 - Sign Up form for user registration. Includes links to home page, and sign up button for completing the form. User verification
 by email.
@@ -281,62 +286,62 @@ by email.
 ![screenshot](documentation/features/feature-16.3.png)
 ![screenshot](documentation/features/feature-16.4.png)
 
-**#19 User Sign in**
+**#20 User Sign in**
 
 - Sign in form for user login. Includes links to home page, and confirmation button for signing in. 
 
 ![screenshot](documentation/features/feature-17.png)
 
-**#20 User Log out**
+**#21 User Log out**
 
 - Log out screen with log out confirmation. 
 
 ![screenshot](documentation/features/feature-18.png)
 
-**#21 User Profile**
+**#22 User Profile**
 
 - Default User Information form and order history. Includes option to save/update customer information to their profile (if registered user), which will be used in the next checkout. Order history includes links to the order summary on previous orders.
 
 ![screenshot](documentation/features/feature-19.png)
 
-**#22 About page**
+**#23 About page**
 
 - About us section with site description, links to partners, facebook and privacy statement. FAQs section with accordion to save screen space (FAQs can be added/edited/removed in admin dashboard). Newsletter signup form.
 
 ![screenshot](documentation/features/feature-20.png)
 
-**#23 Contact page**
+**#24 Contact page**
 
 - Includes contact form to send a message to the admin (can be read in the contacs tab in the dashboard) and a section for phone contact and phone-line operating hours. 
 
 ![screenshot](documentation/features/feature-21.png)
 
-**#24 Mobile Navbar**
+**#25 Mobile Navbar**
 
 - Includes links to navigation in burger dropdown menu. Adds maneuverability to the site for mobile users. Saves screen space.
 
 ![screenshot](documentation/features/feature-24.1.png)
 ![screenshot](documentation/features/feature-24.2.png)
 
-**#25 404-page**
+**#26 404-page**
 
 - Error page when a non-existing service is try to be accessed. Includes a link back to services. Adds maneuverability to the site.
 
 ![screenshot](documentation/browsers/chrome-404.png)
 
-**#26 Admin user management**
+**#27 Admin user management**
 
 - Admin dashboard user management. To be able to moderate users.
 
 ![screenshot](documentation/features/feature-25.png)
 
-**#27 Admin contact management**
+**#28 Admin contact management**
 
 - Admin dashboard contact management. To be able to read messages, and mark them as read.
 
 ![screenshot](documentation/features/feature-26.png)
 
-**#28 Admin FAQ management**
+**#29 Admin FAQ management**
 
 - Admin dashboard FAQ management. To be able to create/edit/delete FAQs.
 
