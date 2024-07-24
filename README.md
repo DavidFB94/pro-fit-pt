@@ -324,6 +324,25 @@ by email.
 
 ![screenshot](documentation/browsers/chrome-404.png)
 
+**#26 Admin user management**
+
+- Admin dashboard user management. To be able to moderate users.
+
+![screenshot](documentation/features/feature-25.png)
+
+**#27 Admin contact management**
+
+- Admin dashboard contact management. To be able to read messages, and mark them as read.
+
+![screenshot](documentation/features/feature-25.png)
+![screenshot](documentation/features/feature-26.png)
+
+**#28 Admin FAQ management**
+
+- Admin dashboard FAQ management. To be able to create/edit/delete FAQs.
+
+![screenshot](documentation/features/feature-27.png)
+
 ### Future Features
 
  **#1 Front end pricing tier creation**
