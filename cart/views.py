@@ -1,7 +1,7 @@
 from django.contrib import messages
 from services.models import Service, PricingTier
 from django.shortcuts import (
-    render, redirect, reverse, HttpResponse, get_object_or_404
+    render, redirect, HttpResponse, get_object_or_404
     )
 
 # Create your views here.

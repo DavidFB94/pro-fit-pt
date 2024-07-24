@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import FAQs, Newsletter
+from .models import FAQs
 from .forms import NewsletterForm
 
 # Create your views here.
