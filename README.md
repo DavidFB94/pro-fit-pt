@@ -10,6 +10,10 @@
 
 ProFit-PT is an e-commerce website where the customer can hire personal trainers for in person training, creating personalized workout plans, and fitness counseling.
 
+The site includes helpful features such as a profile for registered users, an about page and a contact page.
+
+The profile will help returning customers in faster checkout, and make their order history accessible in one place. The about/contact pages are included to show relevant information about the site, and make  contact between customers and site owner(s) simple.
+
 This website was built as a project for the Diploma in Full Stack Software Development at Code Institute.
 
 ## Mockup
