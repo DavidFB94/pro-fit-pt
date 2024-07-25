@@ -312,7 +312,7 @@ by email.
 
 **#24 Contact page**
 
-- Includes contact form to send a message to the admin (can be read in the contacs tab in the dashboard) and a section for phone contact and phone-line operating hours. 
+- Includes contact form to send a message to the admin (can be read in the contacts tab in the dashboard) and a section for phone contact and phone-line operating hours. 
 
 ![screenshot](documentation/features/feature-21.png)
 
